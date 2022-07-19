@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.loginfiina">
+    package="gg.rubit">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,25 +10,26 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LoginFiina"
+        android:theme="@style/Theme.Rubit"
         android:usesCleartextTraffic="true">
+
         <activity
-            android:name=".Activitys.Lecciones.VideoLecturaActivity"
+            android:name="gg.rubit.Activitys.Lecciones.VideoLecturaActivity"
             android:exported="false" />
         <activity
             android:name=".perfilactivity"
             android:exported="false" />
-
-        <activity android:name=".Activitys.Lecciones.ConversacionActivity"
-            android:exported="false"/>
         <activity
-            android:name=".Tutorial.TutorialActivity"
-            android:exported="false"/>
+            android:name="gg.rubit.Activitys.Lecciones.ConversacionActivity"
+            android:exported="false" />
         <activity
-            android:name=".Tutorial.TutorialMainActivity"
-            android:exported="false"/>
+            android:name="gg.rubit.Tutorial.TutorialActivity"
+            android:exported="false" />
         <activity
-            android:name=".Splash.splash_Activity"
+            android:name="gg.rubit.Tutorial.TutorialMainActivity"
+            android:exported="false" />
+        <activity
+            android:name="gg.rubit.Splash.splash_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,10 +37,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activitys.MensajeLoginActivity" />
-        <activity android:name=".Activitys.Login.RegistrarseActivity" />
-        <activity android:name=".Activitys.Login.RecuperarContrasenaActivity" />
-        <activity android:name=".Activitys.Login.LoginActivity" />
+        <activity android:name="gg.rubit.Activitys.MensajeLoginActivity" />
+        <activity android:name="gg.rubit.Activitys.Login.RegistrarseActivity" />
+        <activity android:name="gg.rubit.Activitys.Login.RecuperarContrasenaActivity" />
+        <activity android:name="gg.rubit.Activitys.Login.LoginActivity" />
     </application>
-
 </manifest>
