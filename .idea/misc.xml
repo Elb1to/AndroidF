@@ -3,12 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/HOME/AndroidStudioProjects/AndroidF/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/HOME/AndroidStudioProjects/AndroidF/app/src/main/res/layout/activity_registro.xml" value="0.14" />
-        <entry key="..\:/Users/HOME/AndroidStudioProjects/AndroidF/app/src/main/res/layout/activity_splash.xml" value="0.1" />
-        <entry key="..\:/Users/HOME/AndroidStudioProjects/AndroidF/app/src/main/res/layout/activity_tutorial.xml" value="0.25" />
-        <entry key="..\:/Users/HOME/AndroidStudioProjects/AndroidF/app/src/main/res/layout/activity_tutorial_main.xml" value="0.22" />
-        <entry key="..\:/Users/HOME/AndroidStudioProjects/AndroidF/app/src/main/res/layout/activity_video_lectura.xml" value="0.12" />
         <entry key="..\:/Users/LuisPc/Documents/GitHub/AndroidF/app/src/main/res/drawable-v24/cancel.xml" value="0.193" />
         <entry key="..\:/Users/LuisPc/Documents/GitHub/AndroidF/app/src/main/res/drawable-v24/cargando.xml" value="0.205" />
         <entry key="..\:/Users/LuisPc/Documents/GitHub/AndroidF/app/src/main/res/drawable-v24/rounded_item.xml" value="0.193" />
@@ -19,7 +13,6 @@
         <entry key="..\:/Users/LuisPc/Documents/GitHub/AndroidF/app/src/main/res/layout/activity_menu_login.xml" value="0.1" />
         <entry key="..\:/Users/LuisPc/Documents/GitHub/AndroidF/app/src/main/res/layout/activity_recuperar_contrasena.xml" value="0.17603850050658562" />
         <entry key="..\:/Users/LuisPc/Documents/GitHub/AndroidF/app/src/main/res/layout/activity_registrar.xml" value="0.17603850050658562" />
-        <entry key="..\:/Users/LuisPc/Documents/GitHub/AndroidF/app/src/main/res/layout/activity_resumen.xml" value="0.3625" />
         <entry key="..\:/Users/LuisPc/Documents/GitHub/AndroidF/app/src/main/res/layout/activity_splash.xml" value="0.17603850050658562" />
         <entry key="..\:/Users/LuisPc/Documents/GitHub/AndroidF/app/src/main/res/layout/barra_progreso.xml" value="0.3625" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/LoginFiina/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.291" />
@@ -45,6 +38,23 @@
         <entry key="..\:/Users/andre/AndroidStudioProjects/LoginFiina/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.291" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/LoginFiina/app/src/main/res/mipmap-anydpi-v26/robot.xml" value="0.291" />
         <entry key="..\:/Users/andre/AndroidStudioProjects/LoginFiina/app/src/main/res/mipmap-anydpi-v26/robot_round.xml" value="0.291" />
+        <entry key="app/src/main/res/drawable-v24/cancel.xml" value="0.118" />
+        <entry key="app/src/main/res/layout/activity_des.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/layout/activity_ing.xml" value="0.17" />
+        <entry key="app/src/main/res/layout/activity_leccion.xml" value="0.13958333333333334" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/layout/activity_main_juego3.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_mensaje_login.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/layout/activity_recuperar_contrasena.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/layout/activity_registrar.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/layout/activity_registro.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/layout/activity_resumen.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/layout/activity_tutorial.xml" value="0.13958333333333334" />
+        <entry key="app/src/main/res/layout/activity_tutorial_main.xml" value="0.13958333333333334" />
+        <entry key="app/src/main/res/layout/activity_video_lectura.xml" value="0.19739583333333333" />
+        <entry key="app/src/main/res/layout/barra_progreso.xml" value="0.13958333333333334" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.118" />
       </map>
     </option>
   </component>
