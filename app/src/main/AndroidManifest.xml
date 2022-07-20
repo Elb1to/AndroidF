@@ -37,8 +37,8 @@
             </intent-filter>
         </activity>
         <activity android:name="gg.rubit.Activitys.MensajeLoginActivity" />
-        <activity android:name="gg.rubit.Activitys.Login.RegistrarseActivity" />
-        <activity android:name="gg.rubit.Activitys.Login.RecuperarContrasenaActivity" />
-        <activity android:name="gg.rubit.Activitys.Login.LoginActivity" />
+        <activity android:name="gg.rubit.components.auth.RegisterActivity" />
+        <activity android:name="gg.rubit.components.auth.PasswordRecoveryActivity" />
+        <activity android:name="gg.rubit.components.auth.LoginActivity" />
     </application>
 </manifest>

@@ -1,4 +1,4 @@
-package gg.rubit.Activitys.Login;
+package gg.rubit.components.auth;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -106,14 +106,14 @@ public class LoginActivity extends AppCompatActivity {
 
     public void registerUser(View v) {
         click.start();
-        Intent i = new Intent(getApplicationContext(), RegistrarseActivity.class);
+        Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
         i.putExtra("num", 1);
         startActivity(i);
     }
 
     public void recoverUserPassword(View view) {
         click.start();
-        startActivity(new Intent(getApplicationContext(), RecuperarContrasenaActivity.class));
+        startActivity(new Intent(getApplicationContext(), PasswordRecoveryActivity.class));
     }
 
     public void utpLogo(View view) {

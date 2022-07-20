@@ -7,7 +7,7 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import gg.rubit.Activitys.Login.LoginActivity;
+import gg.rubit.components.auth.LoginActivity;
 import gg.rubit.R;
 
 public class LoadingUI extends AppCompatActivity {
