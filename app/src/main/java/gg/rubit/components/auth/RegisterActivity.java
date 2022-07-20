@@ -11,11 +11,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import gg.rubit.data.UserDataValues;
 import gg.rubit.R;
 import gg.rubit.api.ApiService;
 import gg.rubit.api.response.IdResponse;
 import gg.rubit.api.response.UserResponse;
+import gg.rubit.data.UserDataValues;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

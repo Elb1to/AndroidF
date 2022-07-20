@@ -10,12 +10,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import gg.rubit.database.DatabaseManager;
-import gg.rubit.data.User;
 import gg.rubit.R;
 import gg.rubit.api.ApiService;
 import gg.rubit.api.request.RequestUser;
 import gg.rubit.api.response.UserResponse;
+import gg.rubit.data.User;
+import gg.rubit.database.DatabaseManager;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

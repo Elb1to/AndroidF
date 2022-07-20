@@ -2,12 +2,12 @@ package gg.rubit.api;
 
 import java.util.List;
 
-import gg.rubit.data.ConversationDataValues;
-import gg.rubit.data.UserDataValues;
-import gg.rubit.api.response.IdResponse;
-import gg.rubit.api.response.UserResponse;
 import gg.rubit.api.request.RequestGame;
 import gg.rubit.api.request.RequestUser;
+import gg.rubit.api.response.IdResponse;
+import gg.rubit.api.response.UserResponse;
+import gg.rubit.data.ConversationDataValues;
+import gg.rubit.data.UserDataValues;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;

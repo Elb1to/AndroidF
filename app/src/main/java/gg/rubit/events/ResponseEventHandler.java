@@ -3,10 +3,10 @@ package gg.rubit.events;
 import android.content.Context;
 import android.media.MediaPlayer;
 
-import gg.rubit.data.ConversationDataValues;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import gg.rubit.data.ConversationDataValues;
 
 public class ResponseEventHandler {
 

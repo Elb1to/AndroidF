@@ -12,11 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import gg.rubit.data.Game;
-import gg.rubit.database.DatabaseManager;
 import gg.rubit.R;
 import gg.rubit.api.ApiService;
 import gg.rubit.api.request.RequestGame;
+import gg.rubit.data.Game;
+import gg.rubit.database.DatabaseManager;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
