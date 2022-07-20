@@ -1,4 +1,4 @@
-package gg.rubit.BaseDeDatos;
+package gg.rubit.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

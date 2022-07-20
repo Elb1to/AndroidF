@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import gg.rubit.Activitys.MensajeLoginActivity;
-import gg.rubit.BaseDeDatos.DatabaseManager;
+import gg.rubit.database.DatabaseManager;
 import gg.rubit.Entidades.Usuarios;
 import gg.rubit.R;
 import gg.rubit.api.ApiService;

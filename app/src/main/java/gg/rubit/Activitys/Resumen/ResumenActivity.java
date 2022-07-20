@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import gg.rubit.BaseDeDatos.DatabaseManager;
+import gg.rubit.database.DatabaseManager;
 import gg.rubit.Entidades.Partida;
 import gg.rubit.R;
 import gg.rubit.api.ApiService;
