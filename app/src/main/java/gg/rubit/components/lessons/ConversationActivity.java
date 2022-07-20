@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.List;
 
 import gg.rubit.R;
-import gg.rubit.adapters.ConversacionListViewAdapter;
+import gg.rubit.adapters.ConversationListViewAdapter;
 import gg.rubit.api.ApiService;
 import gg.rubit.data.ConversationDataValues;
 import gg.rubit.events.ResponseEventHandler;
@@ -22,7 +22,7 @@ import retrofit2.Response;
 public class ConversationActivity extends AppCompatActivity {
 
     ListView conversationListView;
-    ConversacionListViewAdapter adapter;
+    ConversationListViewAdapter adapter;
     ResponseEventHandler responseEventHandler = new ResponseEventHandler();
     int size = 0, count = 0;
 
@@ -61,7 +61,7 @@ public class ConversationActivity extends AppCompatActivity {
                     if (size < 1) {
                         Toast.makeText(getApplicationContext(), "No se encontraron mensajes de la leccion", Toast.LENGTH_LONG).show();
                     } else {
-                        adapter = new ConversacionListViewAdapter(getApplicationContext(), responseEventHandler.datos(count));
+                        adapter = new ConversationListViewAdapter(getApplicationContext(), responseEventHandler.datos(count));
                         AttachEvents();
                         updateListViewData();
                     }
