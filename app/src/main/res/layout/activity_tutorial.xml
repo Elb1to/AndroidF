@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.tutorial.TutorialUI"
-    android:orientation="vertical"
     android:background="@color/MoradoFondo"
-    >
+    android:orientation="vertical"
+    tools:context=".ui.tutorial.TutorialUI">
 
     <VideoView
         android:id="@+id/vdt"
@@ -22,19 +20,17 @@
             android:id="@+id/txtdescp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="35dp"
             android:gravity="center"
-            android:textStyle="italic"
+            android:text="En este tutorial notarás todas las funcionalidades del juego"
             android:textColor="@color/white"
-            android:text="En este tutorial notarás todas las funcionalidades del juego"/>
-
-
+            android:textSize="35dp"
+            android:textStyle="italic" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
+
         <Button
             android:id="@+id/btnregresar"
             android:layout_width="match_parent"
@@ -43,8 +39,5 @@
             android:background="@color/Morado"
             android:fontFamily="@font/ralebo"
             android:text="Regresar" />
-
     </LinearLayout>
-
-
 </LinearLayout>

@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/black"
-    tools:context=".ConversacionActivity">
+    android:orientation="vertical"
+    tools:context=".components.lessons.ConversationActivity">
 
     <ListView
-        android:background="@drawable/xd"
         android:id="@+id/lstChats"
         android:layout_width="wrap_content"
-        android:layout_height="500dp" />
+        android:layout_height="500dp"
+        android:background="@drawable/xd" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_green_light"
-        android:text="Siguiente"
-        android:onClick="proceedStory"/>
+        android:onClick="proceedStory"
+        android:text="Siguiente" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:textColor="@color/black"
+        android:onClick="IrAlInicio"
         android:text="Regresar"
-        android:onClick="IrAlInicio"/>
-
+        android:textColor="@color/black" />
 </LinearLayout>

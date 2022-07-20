@@ -1,4 +1,4 @@
-package gg.rubit.Jugabilidad_Escojer_Palabra;
+package gg.rubit.games.wordpicker;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,17 +8,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import gg.rubit.R;
 
-public class MainActivity extends AppCompatActivity {
+public class WordPickerActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_juego3);
-
     }
 
-
-    public void jugar(View view) {
-
-        startActivity(new Intent(this,Jugabilidad3_Activity.class));
+    public void play(View view) {
+        startActivity(new Intent(this, WordPickerGame.class));
     }
 }
