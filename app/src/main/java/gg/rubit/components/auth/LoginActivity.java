@@ -115,16 +115,6 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), PasswordRecoveryActivity.class));
     }
 
-    public void utpLogo(View view) {
-        click.start();
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/")));
-    }
-
-    public void fiscLogo(View view) {
-        click.start();
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/")));
-    }
-
     @Override
     protected void onPause() {
         super.onPause();

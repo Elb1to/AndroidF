@@ -68,12 +68,12 @@ public class AuthMessageActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), AuthMessageActivity.class));
     }
 
-    public void Utp(View view) {
+    public void utpLogo(View view) {
         click.start();
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/")));
     }
 
-    public void UtpFisc(View view) {
+    public void fiscLogo(View view) {
         click.start();
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/")));
     }
