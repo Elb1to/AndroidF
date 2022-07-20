@@ -3,15 +3,15 @@ package gg.rubit.events;
 import android.content.Context;
 import android.media.MediaPlayer;
 
-import gg.rubit.Entidades.DatosConversacion;
+import gg.rubit.data.ConversationDataValues;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ResponseEventHandler {
 
-    List<DatosConversacion> fuente = new ArrayList<>();
-    List<DatosConversacion> Arrlst = new ArrayList<>();
+    List<ConversationDataValues> fuente = new ArrayList<>();
+    List<ConversationDataValues> Arrlst = new ArrayList<>();
     Context context;
 
 
@@ -19,10 +19,10 @@ public class ResponseEventHandler {
         context = c;
     }
 
-    public int responseReceived(List<DatosConversacion> d) {
+    public int responseReceived(List<ConversationDataValues> d) {
 
         for(int i=0;i<d.size();i++) {
-            DatosConversacion obj = new DatosConversacion();
+            ConversationDataValues obj = new ConversationDataValues();
             obj.setId(d.get(i).getId());
             obj.setLecciones_id(d.get(i).getLecciones_id());
             obj.setPersona(d.get(i).getPersona());
@@ -33,9 +33,9 @@ public class ResponseEventHandler {
         return  fuente.size();
     }
 
-    public List<DatosConversacion> datos (int count)  {
+    public List<ConversationDataValues> datos (int count)  {
 
-        DatosConversacion datos = new DatosConversacion();
+        ConversationDataValues datos = new ConversationDataValues();
 
         datos.setId(fuente.get(count).getId());
         datos.setLecciones_id(fuente.get(count).getLecciones_id());

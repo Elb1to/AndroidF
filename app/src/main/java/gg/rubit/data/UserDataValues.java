@@ -1,6 +1,7 @@
-package gg.rubit.Entidades;
+package gg.rubit.data;
 
-public class DatosUsuarios {
+public class UserDataValues {
+
     private int id;
     private int usuario_id;
     private String nombre;

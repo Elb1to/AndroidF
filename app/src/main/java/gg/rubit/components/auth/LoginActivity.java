@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import gg.rubit.Activitys.MensajeLoginActivity;
 import gg.rubit.database.DatabaseManager;
-import gg.rubit.Entidades.Usuarios;
+import gg.rubit.data.User;
 import gg.rubit.R;
 import gg.rubit.api.ApiService;
 import gg.rubit.api.request.RequestUser;
@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void verifyUserSession() {
-        Usuarios user = database.getUserSession();
+        User user = database.getUserSession();
         if (user != null) {
             startActivity(new Intent(getApplicationContext(), MensajeLoginActivity.class));
         }
@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (response.isSuccessful()) {
                         UserResponse estudiante = response.body();
                         if (estudiante != null) {
-                            Usuarios user = new Usuarios(estudiante.getId(), estudiante.getCorreo(), "", estudiante.getNombre());
+                            User user = new User(estudiante.getId(), estudiante.getCorreo(), "", estudiante.getNombre());
 
                             database.saveUserSession(user);
 

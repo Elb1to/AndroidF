@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import gg.rubit.Entidades.DatosUsuarios;
+import gg.rubit.data.UserDataValues;
 import gg.rubit.R;
 import gg.rubit.api.ApiService;
 import gg.rubit.api.response.IdResponse;
@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void registerUser(View v) {
         try {
-            DatosUsuarios estudiante = new DatosUsuarios();
+            UserDataValues estudiante = new UserDataValues();
             estudiante.setNombre(nombre.getText().toString());
             estudiante.setCorreo(correo.getText().toString());
             estudiante.setPassword(password.getText().toString());
@@ -73,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<IdResponse> call, Response<IdResponse> response) {
                     if (response.isSuccessful()) {
-                        DatosUsuarios estudiante = new DatosUsuarios();
+                        UserDataValues estudiante = new UserDataValues();
                         estudiante.setNombre(nombre.getText().toString());
                         estudiante.setCorreo(correo.getText().toString());
                         estudiante.setPassword(password.getText().toString());

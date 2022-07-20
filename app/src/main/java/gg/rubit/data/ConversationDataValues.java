@@ -1,6 +1,6 @@
-package gg.rubit.Entidades;
+package gg.rubit.data;
 
-public class DatosConversacion {
+public class ConversationDataValues {
 
     private int id;
     private int lecciones_id;

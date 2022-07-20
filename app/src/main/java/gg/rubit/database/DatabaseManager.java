@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import gg.rubit.Entidades.Partida;
-import gg.rubit.Entidades.Usuarios;
+import gg.rubit.data.Game;
+import gg.rubit.data.User;
 
 public class DatabaseManager {
 
@@ -19,13 +19,13 @@ public class DatabaseManager {
         databaseHelper = new DatabaseHelper(context, "juego", null, 1);
     }
 
-    public long insertGameAnswer(Partida partida, int numPartida) {
+    public long insertGameAnswer(Game game, int gameId) {
         try {
             SQLiteDatabase db = databaseHelper.getWritableDatabase();
             if (db != null) {
                 ContentValues values = new ContentValues();
-                values.put("partida", numPartida);
-                values.put("jugador", partida.getJugador());
+                values.put("partida", gameId);
+                values.put("jugador", game.getPlayer());
                 return db.insert("partida", null, values);
             }
         } catch (Exception e) {
@@ -35,23 +35,24 @@ public class DatabaseManager {
         return 0;
     }
 
-    public List<Partida> getGameById(int partida) {
+    public List<Game> getGameById(int game) {
         try {
             SQLiteDatabase db = databaseHelper.getReadableDatabase();
-            List<Partida> partidas = new ArrayList<>();
+            List<Game> games = new ArrayList<>();
             if (db != null) {
                 String[] campos = {"partida", "jugador", "juego", "nivel", "pregunta", "respuestas", "puntaje", "fecha", "hora"};
-                Cursor cursor = db.query("partida", campos, "partida=" + partida, null, null, null, "hora DESC");
+                Cursor cursor = db.query("partida", campos, "partida=" + game, null, null, null, "hora DESC");
                 if (cursor.moveToFirst()) {
                     do {
-                        Partida part = new Partida();
-                        part.setJugador(cursor.getString(1));
-                        part.setPuntaje(cursor.getInt(6));
-                        partidas.add(part);
+                        Game part = new Game();
+                        part.setPlayer(cursor.getString(1));
+                        part.setScore(cursor.getInt(6));
+                        games.add(part);
                     } while (cursor.moveToNext());
                 }
             }
-            return partidas;
+
+            return games;
         } catch (Exception e) {
             int x = 1;
         }
@@ -80,13 +81,13 @@ public class DatabaseManager {
         return partida;
     }
 
-    public int getNextGame(String juego) {
+    public int getNextGame(String game) {
         int partida = 1;
         try {
             SQLiteDatabase db = databaseHelper.getReadableDatabase();
             if (db != null) {
                 String[] campo = {"partida"};
-                Cursor cursor = db.query("partida", campo, "juego='" + juego + "'", null, "partida", null, "partida DESC", "1");
+                Cursor cursor = db.query("partida", campo, "juego='" + game + "'", null, "partida", null, "partida DESC", "1");
                 cursor.moveToFirst();
                 do {
                     partida = cursor.getInt(0) + 1;
@@ -153,15 +154,15 @@ public class DatabaseManager {
 
     }*/
 
-    public Boolean saveUserSession(Usuarios usuario) {
+    public Boolean saveUserSession(User user) {
         try {
             SQLiteDatabase db = databaseHelper.getWritableDatabase();
             if (db != null) {
                 db.delete("session", null, null);
                 ContentValues values = new ContentValues();
-                values.put("id", usuario.getId());
-                values.put("correo", usuario.getCorreo());
-                values.put("nombre", usuario.getNombre());
+                values.put("id", user.getId());
+                values.put("correo", user.getEmail());
+                values.put("nombre", user.getName());
 
                 db.insert("session", null, values);
                 db.close();
@@ -174,14 +175,14 @@ public class DatabaseManager {
         return false;
     }
 
-    public Usuarios getUserSession() {
+    public User getUserSession() {
         try {
             SQLiteDatabase db = databaseHelper.getReadableDatabase();
             if (db != null) {
                 String[] campos = new String[]{"id", "correo", "nombre"};
                 Cursor cursor = db.query("session", campos, null, null, null, null, null);
                 if (cursor.moveToFirst()) {
-                    return new Usuarios(cursor.getInt(0), cursor.getString(1), "", cursor.getString(2));
+                    return new User(cursor.getInt(0), cursor.getString(1), "", cursor.getString(2));
                 }
             }
         } catch (Exception c) {

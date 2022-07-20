@@ -2,8 +2,8 @@ package gg.rubit.api;
 
 import java.util.List;
 
-import gg.rubit.Entidades.DatosConversacion;
-import gg.rubit.Entidades.DatosUsuarios;
+import gg.rubit.data.ConversationDataValues;
+import gg.rubit.data.UserDataValues;
 import gg.rubit.api.response.IdResponse;
 import gg.rubit.api.response.UserResponse;
 import gg.rubit.api.request.RequestGame;
@@ -19,14 +19,14 @@ public interface ApiInterface {
     Call<UserResponse> login(@Body RequestUser request);
 
     @POST("usuarios")
-    Call<IdResponse> postRegistrarUsuarios(@Body DatosUsuarios estudiante);
+    Call<IdResponse> postRegistrarUsuarios(@Body UserDataValues estudiante);
 
     @POST("datos_usuarios")
-    Call<UserResponse> postRegistrarDatosUsuarios(@Body DatosUsuarios estudiante);
+    Call<UserResponse> postRegistrarDatosUsuarios(@Body UserDataValues estudiante);
 
     @POST("usuarios")
     Call<Integer> postRegistrarPartida(@Body RequestGame partida);
 
     @GET("conversacion")
-    Call<List<DatosConversacion>> getDialogsList();
+    Call<List<ConversationDataValues>> getDialogsList();
 }
