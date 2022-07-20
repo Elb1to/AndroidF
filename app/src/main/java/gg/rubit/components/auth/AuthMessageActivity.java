@@ -35,10 +35,10 @@ public class AuthMessageActivity extends AppCompatActivity {
         type = i.getIntExtra("Tipaje", 2);
 
         //imgCargando = (ImageView)findViewById(R.id.imgCargando);
-        imgCargando.setBackgroundResource(R.drawable.cargando);
+        //imgCargando.setBackgroundResource(R.drawable.cargando);
 
-        animationDrawable = (AnimationDrawable) imgCargando.getBackground();
-        animationDrawable.start();
+        //animationDrawable = (AnimationDrawable) imgCargando.getBackground();
+       // animationDrawable.start();
 
         click = MediaPlayer.create(this, R.raw.click);
         music = MediaPlayer.create(this, R.raw.resum);
@@ -60,7 +60,7 @@ public class AuthMessageActivity extends AppCompatActivity {
         txtNombre.setText(userType + "\n" + name);
 
         //imgCargando = (ImageView)findViewById(R.id.imgCargando);
-        imgCargando.setBackgroundResource(R.drawable.cargando);
+        //imgCargando.setBackgroundResource(R.drawable.cargando);
     }
 
     public void Menu(View v) {
