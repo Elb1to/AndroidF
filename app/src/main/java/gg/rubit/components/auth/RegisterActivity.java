@@ -65,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
             estudiante.setPassword(password.getText().toString());
             estudiante.setApellido(apellido.getText().toString());
             estudiante.setCedula(cedula.getText().toString());
-            estudiante.setTipo_usuario("estudiante");
+            estudiante.setTipo_usuario("");
 
             Call<IdResponse> response1 = ApiService.getApiService().postRegistrarUsuarios(estudiante);
             response1.enqueue(new Callback<IdResponse>() {
@@ -79,25 +79,27 @@ public class RegisterActivity extends AppCompatActivity {
                         estudiante.setPassword(password.getText().toString());
                         estudiante.setApellido(apellido.getText().toString());
                         estudiante.setCedula(cedula.getText().toString());
-                        estudiante.setTipo_usuario("estudiante");
-                        estudiante.setPuntajeac("200");
 
                         IdResponse id = response.body();
                         estudiante.setUsuario_id(id.getId());
 
-                        Call<UserResponse> responses = ApiService.getApiService().postRegistrarDatosUsuarios(estudiante);
-                        responses.enqueue(new Callback<UserResponse>() {
+                        Call<Integer> responses = ApiService.getApiService().postRegistrarDatosUsuarios(estudiante);
+                        responses.enqueue(new Callback<Integer>() {
                             @Override
-                            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                            public void onResponse(Call<Integer> call, Response<Integer> response) {
                                 if (response.isSuccessful()) {
-                                    UserResponse id = response.body();
+                                    //UserResponse id = response.body();
+                                    Toast.makeText(getApplicationContext(), "Datos del Usuario Creados Correctamente", Toast.LENGTH_LONG).show();
+                                    Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                                    startActivity(i);
+                                    int x = 1;
                                 } else {
                                     int x = 1;
                                 }
                             }
 
                             @Override
-                            public void onFailure(Call<UserResponse> call, Throwable t) {
+                            public void onFailure(Call<Integer> call, Throwable t) {
                                 Toast.makeText(getApplicationContext(), "Datos del Usuario Creados Correctamente", Toast.LENGTH_LONG).show();
                                 Intent i = new Intent(getApplicationContext(), LoginActivity.class);
                                 startActivity(i);

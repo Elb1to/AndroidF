@@ -1,4 +1,4 @@
-package gg.rubit.adapters;
+/*package gg.rubit.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -29,11 +29,11 @@ public class WordPairsAdapter extends ArrayAdapter<Pairs> {
         View item = inflater.inflate(R.layout.listviewpareo, null);
 
         TextView texto = (TextView) item.findViewById(R.id.lblPareoTemplate);
-        texto.setText(pairsList.get(position).getpre());
+        //texto.setText(pairsList.get(position).getpre());
 
         TextView texto2 = (TextView) item.findViewById(R.id.lblPareores);
-        texto2.setText(pairsList.get(position).getres());
+       // texto2.setText(pairsList.get(position).getres());
 
         return item;
     }
-}
+}*/

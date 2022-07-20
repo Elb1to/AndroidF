@@ -1,4 +1,4 @@
-package gg.rubit.data;
+/*package gg.rubit.data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -143,4 +143,4 @@ public class Pairs {
 
         return 0;
     }
-}
+}*/

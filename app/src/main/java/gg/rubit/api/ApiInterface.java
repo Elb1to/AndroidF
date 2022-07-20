@@ -23,7 +23,7 @@ public interface ApiInterface {
     Call<IdResponse> postRegistrarUsuarios(@Body UserDataValues estudiante);
 
     @POST("datos_usuarios")
-    Call<UserResponse> postRegistrarDatosUsuarios(@Body UserDataValues estudiante);
+    Call<Integer> postRegistrarDatosUsuarios(@Body UserDataValues estudiante);
 
     @POST("usuarios")
     Call<Integer> postRegistrarPartida(@Body RequestGame partida);

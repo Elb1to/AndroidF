@@ -1,4 +1,4 @@
-package gg.rubit.games.wordpairs;
+/*package gg.rubit.games.wordpairs;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -189,4 +189,4 @@ public class WordPairsGame extends AppCompatActivity {
             }
         }
     }
-}
+}*/

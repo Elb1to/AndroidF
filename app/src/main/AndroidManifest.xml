@@ -17,9 +17,6 @@
             android:name="gg.rubit.components.lessons.VideoLessonActivity"
             android:exported="false" />
         <activity
-            android:name=".perfilactivity"
-            android:exported="false" />
-        <activity
             android:name="gg.rubit.components.lessons.ConversationActivity"
             android:exported="false" />
         <activity
