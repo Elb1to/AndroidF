@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="25dp"
-            android:onClick="IniciarSesion"
+            android:onClick="performUserLogin"
             android:background="@color/Morado"
             android:fontFamily="@font/ralebo"
             android:text="Login" />
@@ -119,7 +119,7 @@
                 android:background="#0000"
                 android:fontFamily="@font/m"
                 android:gravity="right"
-                android:onClick="Registrarse"
+                android:onClick="registerUser"
                 android:text="Registrarse"
                 android:textColor="@color/white" />
 
@@ -130,7 +130,7 @@
                 android:layout_alignParentRight="true"
                 android:background="#0000"
                 android:fontFamily="@font/m"
-                android:onClick="RecuperarContraseña"
+                android:onClick="recoverUserPassword"
                 android:gravity="right"
                 android:text="Recuperar\nContraseña"
                 android:textColor="@color/white" />

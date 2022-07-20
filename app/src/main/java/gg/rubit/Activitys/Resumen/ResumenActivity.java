@@ -1,33 +1,31 @@
 package gg.rubit.Activitys.Resumen;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
-import gg.rubit.BaseDeDatos.ProcesosDB;
-import gg.rubit.Entidades.Partida;
-import gg.rubit.R;
-import gg.rubit.api.request.RequestGame;
-import gg.rubit.api.ApiService;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import gg.rubit.BaseDeDatos.DatabaseManager;
+import gg.rubit.Entidades.Partida;
+import gg.rubit.R;
+import gg.rubit.api.ApiService;
+import gg.rubit.api.request.RequestGame;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ResumenActivity extends AppCompatActivity {
 
-    TextView jugador,puntaje;
+    TextView player, score;
 
-    List<Partida> _partidas = new ArrayList<>();
+    List<Partida> games = new ArrayList<>();
     MediaPlayer click, music;
 
     Intent i;
@@ -36,82 +34,79 @@ public class ResumenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumen);
-        int partida = getIntent().getIntExtra("Partida",0);
-        LoadListView(partida);
-        InicializarControles();
-        MapearCampos();
-        GuardarPartidaApi(_partidas);
+
+        int game = getIntent().getIntExtra("Partida", 0);
+        loadViewByGameId(game);
+        initializeControllers();
+        assignValues();
+        saveGameToApi(games);
 
         i = getIntent();
 
         click = MediaPlayer.create(this, R.raw.click);
-
         music = MediaPlayer.create(this, R.raw.resum);
         music.start();
     }
 
-
-    private void GuardarPartidaApi(List<Partida> partidas) {
+    private void saveGameToApi(List<Partida> partidas) {
         RequestGame request = new RequestGame();
         request.setNombre(partidas.get(0).getJugador());
-        request.setPuntaje(ObtenerPuntaje(partidas));
+        request.setPuntaje(getScore(partidas));
 
-            Call<Integer> response = ApiService.getApiService().postRegistrarPartida(request);
-            response.enqueue(new Callback<Integer>() {
-                @Override
-                public void onResponse(Call<Integer> call, Response<Integer> response) {
-                    if (response.isSuccessful()) {
-                        int registrado = response.body();
-                        if (registrado > 0) {
+        Call<Integer> response = ApiService.getApiService().postRegistrarPartida(request);
+        response.enqueue(new Callback<Integer>() {
+            @Override
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                if (response.isSuccessful()) {
+                    int registered = response.body();
+                    if (registered > 0) {
 
-                        }
-                    } else {
-                        int x = 1;
                     }
-                }
-
-                @Override
-                public void onFailure(Call<Integer> call, Throwable t) {
+                } else {
                     int x = 1;
                 }
-            });
+            }
 
+            @Override
+            public void onFailure(Call<Integer> call, Throwable t) {
+                int x = 1;
+            }
+        });
     }
 
-    public void RegresarJuegos(View v){
+    public void getGames(View v) {
         click.start();
         //Intent i = new Intent(getApplicationContext(), MenuLoginActivity.class);
         startActivity(i);
     }
 
-    private void MapearCampos() {
-        jugador.setText(_partidas.get(0).getJugador());
-        puntaje.setText(Integer.toString(ObtenerPuntaje(_partidas)));
+    @SuppressLint("SetTextI18n")
+    private void assignValues() {
+        player.setText(games.get(0).getJugador());
+        score.setText(Integer.toString(getScore(games)));
     }
 
-    private int ObtenerPuntaje(List<Partida> partidas){
+    private int getScore(List<Partida> partidas) {
         int puntaje = 0;
-        for (Partida part : partidas){
+        for (Partida part : partidas) {
             puntaje = puntaje + part.getPuntaje();
         }
 
         return puntaje;
     }
-    private void LoadListView(int partida) {
-        ProcesosDB db = new ProcesosDB(getApplicationContext());
 
-        _partidas = db.ObtenerPartidaById(partida);
+    private void loadViewByGameId(int partida) {
+        DatabaseManager db = new DatabaseManager(getApplicationContext());
+        games = db.getGameById(partida);
     }
 
-    private void InicializarControles(){
-
-        jugador = (TextView)findViewById(R.id.txtJugador);
-        puntaje = (TextView)findViewById(R.id.txtPuntos);
+    private void initializeControllers() {
+        player = (TextView) findViewById(R.id.txtJugador);
+        score = (TextView) findViewById(R.id.txtPuntos);
     }
-
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         music.pause();
     }
