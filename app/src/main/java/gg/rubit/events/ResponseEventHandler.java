@@ -1,4 +1,4 @@
-package gg.rubit.Procesos;
+package gg.rubit.events;
 
 import android.content.Context;
 import android.media.MediaPlayer;
