@@ -13,8 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import gg.rubit.BaseDeDatos.ProcesosDB;
 import gg.rubit.Entidades.Partida;
 import gg.rubit.R;
-import gg.rubit.Request.PartidaRequest;
-import gg.rubit.Services.ApiService;
+import gg.rubit.api.request.RequestGame;
+import gg.rubit.api.ApiService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +52,7 @@ public class ResumenActivity extends AppCompatActivity {
 
 
     private void GuardarPartidaApi(List<Partida> partidas) {
-        PartidaRequest request = new PartidaRequest();
+        RequestGame request = new RequestGame();
         request.setNombre(partidas.get(0).getJugador());
         request.setPuntaje(ObtenerPuntaje(partidas));
 

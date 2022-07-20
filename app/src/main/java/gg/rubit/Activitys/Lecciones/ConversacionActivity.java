@@ -13,7 +13,7 @@ import gg.rubit.Adaptadores.ConversacionListViewAdapter;
 import gg.rubit.Entidades.DatosConversacion;
 import gg.rubit.Procesos.ResponseEventHandler;
 import gg.rubit.R;
-import gg.rubit.Services.ApiService;
+import gg.rubit.api.ApiService;
 
 import java.util.List;
 

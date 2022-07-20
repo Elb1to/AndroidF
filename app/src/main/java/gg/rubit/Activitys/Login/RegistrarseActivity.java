@@ -13,9 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import gg.rubit.Entidades.DatosUsuarios;
 import gg.rubit.R;
-import gg.rubit.Response.IdResponse;
-import gg.rubit.Response.UsuarioResponse;
-import gg.rubit.Services.ApiService;
+import gg.rubit.api.response.IdResponse;
+import gg.rubit.api.response.UserResponse;
+import gg.rubit.api.ApiService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -86,20 +86,20 @@ public class RegistrarseActivity extends AppCompatActivity {
                         estudiante.setPuntajeac("200");
                         IdResponse id = response.body();
                         estudiante.setUsuario_id(id.getId());
-                        Call<UsuarioResponse> responses = ApiService.getApiService(). postRegistrarDatosUsuarios(estudiante);
-                        responses.enqueue(new Callback<UsuarioResponse>(){
+                        Call<UserResponse> responses = ApiService.getApiService(). postRegistrarDatosUsuarios(estudiante);
+                        responses.enqueue(new Callback<UserResponse>(){
 
                             @Override
-                            public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
+                            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                                 if (response.isSuccessful()){
-                                    UsuarioResponse id = response.body();
+                                    UserResponse id = response.body();
                                 }else{
                                     int x = 1;
                                 }
                             }
 
                             @Override
-                            public void onFailure(Call<UsuarioResponse> call, Throwable t) {
+                            public void onFailure(Call<UserResponse> call, Throwable t) {
                                 Toast.makeText(getApplicationContext(),"Datos del Usuario Creados Correctamente",Toast.LENGTH_LONG).show();
                                 Intent i = new Intent(getApplicationContext(), LoginActivity.class);
                                 startActivity(i);

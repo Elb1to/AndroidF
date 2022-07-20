@@ -14,9 +14,9 @@ import gg.rubit.Activitys.MensajeLoginActivity;
 import gg.rubit.BaseDeDatos.ProcesosDB;
 import gg.rubit.Entidades.Usuarios;
 import gg.rubit.R;
-import gg.rubit.Request.UsuarioRequest;
-import gg.rubit.Response.UsuarioResponse;
-import gg.rubit.Services.ApiService;
+import gg.rubit.api.request.RequestUser;
+import gg.rubit.api.response.UserResponse;
+import gg.rubit.api.ApiService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -66,16 +66,16 @@ public class LoginActivity extends AppCompatActivity {
             click.start();
             String user = u.getText().toString();
             String pass = p.getText().toString();
-            UsuarioRequest request = new UsuarioRequest();
+            RequestUser request = new RequestUser();
             request.setCorreo(user);
             request.setPassword(pass);
 
-            Call<UsuarioResponse> response = ApiService.getApiService().login(request);
-            response.enqueue(new Callback<UsuarioResponse>() {
+            Call<UserResponse> response = ApiService.getApiService().login(request);
+            response.enqueue(new Callback<UserResponse>() {
                 @Override
-                public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
+                public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                     if (response.isSuccessful()){
-                        UsuarioResponse estudiante = response.body();
+                        UserResponse estudiante = response.body();
                         if (estudiante != null){
 
                             Usuarios user =
@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(Call<UsuarioResponse> call, Throwable t) {
+                public void onFailure(Call<UserResponse> call, Throwable t) {
                     Toast.makeText(getApplicationContext(),"Error Al Iniciar Sesión",Toast.LENGTH_LONG).show();
                     int x = 1;
                 }

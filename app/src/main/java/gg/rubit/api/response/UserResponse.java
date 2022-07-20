@@ -1,6 +1,7 @@
-package gg.rubit.Response;
+package gg.rubit.api.response;
 
-public class UsuarioResponse {
+public class UserResponse {
+
     private int id;
     private int usuario_id;
     private String nombre;
@@ -14,7 +15,6 @@ public class UsuarioResponse {
     private String edad;
     private String last_Login;
     private String correo;
-
 
     public int getId() {
         return id;

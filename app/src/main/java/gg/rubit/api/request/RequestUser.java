@@ -1,6 +1,7 @@
-package gg.rubit.Request;
+package gg.rubit.api.request;
 
-public class UsuarioRequest {
+public class RequestUser {
+
     private String correo;
     private String password;
 

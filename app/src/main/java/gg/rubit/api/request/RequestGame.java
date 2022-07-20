@@ -1,7 +1,7 @@
-package gg.rubit.Request;
+package gg.rubit.api.request;
 
 
-public class PartidaRequest {
+public class RequestGame {
 
     private String nombre;
     private int puntaje;
