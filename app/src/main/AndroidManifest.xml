@@ -23,17 +23,16 @@
             android:name="gg.rubit.Activitys.Lecciones.ConversacionActivity"
             android:exported="false" />
         <activity
-            android:name="gg.rubit.Tutorial.TutorialActivity"
+            android:name="gg.rubit.ui.tutorial.TutorialUI"
             android:exported="false" />
         <activity
-            android:name="gg.rubit.Tutorial.TutorialMainActivity"
+            android:name="gg.rubit.ui.tutorial.TutorialMainActivity"
             android:exported="false" />
         <activity
-            android:name="gg.rubit.Splash.splash_Activity"
+            android:name="gg.rubit.ui.loading.LoadingUI"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

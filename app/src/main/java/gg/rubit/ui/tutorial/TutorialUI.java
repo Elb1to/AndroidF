@@ -1,4 +1,4 @@
-package gg.rubit.Tutorial;
+package gg.rubit.ui.tutorial;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import gg.rubit.R;
 
-public class TutorialActivity extends AppCompatActivity {
+public class TutorialUI extends AppCompatActivity {
 
     VideoView vdt;
 
@@ -19,13 +19,10 @@ public class TutorialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tutorial);
 
         vdt = (VideoView) findViewById(R.id.vdt);
-
         vdt.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.videotutorial));
 
         MediaController mediaController = new MediaController(this);
         vdt.setMediaController(mediaController);
-
         vdt.start();
-
     }
 }

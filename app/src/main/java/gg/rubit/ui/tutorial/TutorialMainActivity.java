@@ -1,4 +1,4 @@
-package gg.rubit.Tutorial;
+package gg.rubit.ui.tutorial;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,23 +9,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import gg.rubit.R;
 
-public class TutorialMainActivity  extends AppCompatActivity {
+public class TutorialMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial_main);
-
-        inicializarControles();
+        initializeControllers();
     }
 
     Button tutorial;
 
-    private void inicializarControles(){
+    private void initializeControllers() {
         tutorial = (Button) findViewById(R.id.btntutorial);
     }
 
-    public void Confirmar(View view) {
-        startActivity(new Intent(this, TutorialActivity.class));
+    public void confirm(View view) {
+        startActivity(new Intent(this, TutorialUI.class));
     }
 }
