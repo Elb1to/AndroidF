@@ -2,6 +2,7 @@ package com.example.loginfiina.Services;
 
 import retrofit2.Call;
 
+import com.example.loginfiina.Entidades.DatosConversacion;
 import com.example.loginfiina.Entidades.DatosUsuarios;
 import com.example.loginfiina.Request.PartidaRequest;
 import com.example.loginfiina.Request.UsuarioRequest;
@@ -27,4 +28,6 @@ public interface ApiInterface {
     @POST("usuarios")
     Call<Integer> postRegistrarPartida(@Body PartidaRequest partida);
 
+    @GET("conversacion")
+    Call<List<DatosConversacion>> getLisTDialogs();
 }

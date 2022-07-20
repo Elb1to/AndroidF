@@ -18,6 +18,9 @@
         <activity
             android:name=".perfilactivity"
             android:exported="false" />
+
+        <activity android:name=".Activitys.Lecciones.ConversacionActivity"
+            android:exported="false"/>
         <activity
             android:name=".Tutorial.TutorialActivity"
             android:exported="false"/>
