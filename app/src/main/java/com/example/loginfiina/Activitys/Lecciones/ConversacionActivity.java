@@ -61,7 +61,7 @@ public class ConversacionActivity extends AppCompatActivity {
 
     public void ObtenerDialogos() {
 
-        Call<List<DatosConversacion>> call = ApiService.getApiService().getLisTDialogs();
+        Call<List<DatosConversacion>> call = ApiService.getApiService().getDialogsList();
 
         call.enqueue(new Callback<List<DatosConversacion>>() {
             @Override
