@@ -1,4 +1,4 @@
-package gg.rubit.Activitys.Resumen;
+package gg.rubit.components.summary;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -21,7 +21,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ResumenActivity extends AppCompatActivity {
+public class SummaryActivity extends AppCompatActivity {
 
     TextView player, score;
 
