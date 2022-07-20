@@ -5,6 +5,7 @@ import java.util.List;
 import gg.rubit.api.request.RequestGame;
 import gg.rubit.api.request.RequestUser;
 import gg.rubit.api.response.IdResponse;
+import gg.rubit.api.response.PairsResponse;
 import gg.rubit.api.response.UserResponse;
 import gg.rubit.data.ConversationDataValues;
 import gg.rubit.data.UserDataValues;
@@ -29,4 +30,7 @@ public interface ApiInterface {
 
     @GET("conversacion")
     Call<List<ConversationDataValues>> getDialogsList();
+
+    @GET("preguntas_pareo")
+    Call<List<PairsResponse>> getPairsList();
 }
