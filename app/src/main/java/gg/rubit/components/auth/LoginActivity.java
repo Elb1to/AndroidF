@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import gg.rubit.Activitys.MensajeLoginActivity;
 import gg.rubit.database.DatabaseManager;
 import gg.rubit.data.User;
 import gg.rubit.R;
@@ -54,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
     private void verifyUserSession() {
         User user = database.getUserSession();
         if (user != null) {
-            startActivity(new Intent(getApplicationContext(), MensajeLoginActivity.class));
+            startActivity(new Intent(getApplicationContext(), AuthMessageActivity.class));
         }
     }
 
@@ -81,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Login Exitoso", Toast.LENGTH_LONG).show();
                             estudiante.setTipo(3);
 
-                            Intent i = new Intent(getApplicationContext(), MensajeLoginActivity.class);
+                            Intent i = new Intent(getApplicationContext(), AuthMessageActivity.class);
                             i.putExtra("Nombre", estudiante.getNombre());
                             i.putExtra("Tipaje", estudiante.getTipo());
 

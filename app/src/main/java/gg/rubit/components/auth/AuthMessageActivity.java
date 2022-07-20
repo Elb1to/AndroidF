@@ -1,4 +1,4 @@
-package gg.rubit.Activitys;
+package gg.rubit.components.auth;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
@@ -13,13 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import gg.rubit.R;
 
-public class MensajeLoginActivity extends AppCompatActivity {
+public class AuthMessageActivity extends AppCompatActivity {
 
     ImageView imgCargando;
     TextView txtNombre;
 
-    private String Nombre, Tipaje;
-    private int Tipo;
+    private String name, userType;
+    private int type;
 
     Intent i;
     AnimationDrawable animationDrawable;
@@ -29,61 +29,57 @@ public class MensajeLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mensaje_login);
-        i = getIntent();
-        Nombre = i.getStringExtra("Nombre");
-        Tipo = i.getIntExtra("Tipaje",2);
 
-       // imgCargando = (ImageView)findViewById(R.id.imgCargando);
+        i = getIntent();
+        name = i.getStringExtra("Nombre");
+        type = i.getIntExtra("Tipaje", 2);
+
+        //imgCargando = (ImageView)findViewById(R.id.imgCargando);
         imgCargando.setBackgroundResource(R.drawable.cargando);
 
-        animationDrawable = (AnimationDrawable)imgCargando.getBackground();
+        animationDrawable = (AnimationDrawable) imgCargando.getBackground();
         animationDrawable.start();
 
         click = MediaPlayer.create(this, R.raw.click);
-
         music = MediaPlayer.create(this, R.raw.resum);
 
-        InicializarControles();
-
+        initializeControllers();
     }
 
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         music.start();
     }
 
-    public void InicializarControles(){
-
-        if(Tipo==3){
-            Tipaje="Estudiante";
+    public void initializeControllers() {
+        if (type == 3) {
+            userType = "Estudiante";
         }
-        txtNombre = (TextView)findViewById(R.id.txtNombreLogin);
-        txtNombre.setText(Tipaje+"\n"+Nombre);
 
-     //   imgCargando = (ImageView)findViewById(R.id.imgCargando);
+        txtNombre = (TextView) findViewById(R.id.txtNombreLogin);
+        txtNombre.setText(userType + "\n" + name);
+
+        //imgCargando = (ImageView)findViewById(R.id.imgCargando);
         imgCargando.setBackgroundResource(R.drawable.cargando);
-
     }
 
-    public void Menu(View v){
+    public void Menu(View v) {
         click.start();
-        startActivity(new Intent(getApplicationContext(), MensajeLoginActivity.class));
+        startActivity(new Intent(getApplicationContext(), AuthMessageActivity.class));
     }
 
     public void Utp(View view) {
         click.start();
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
-        startActivity(i);
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/")));
     }
 
     public void UtpFisc(View view) {
         click.start();
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
-        startActivity(i);
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/")));
     }
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         music.pause();
     }
