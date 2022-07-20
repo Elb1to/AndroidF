@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activitys.Lecciones.LeccionActivity"
     android:background="@color/MoradoFondo"
-    android:gravity="center">
+    android:gravity="center"
+    tools:context=".components.lessons.LessonActivity">
 
     <RelativeLayout
         android:layout_width="350dp"
@@ -47,7 +47,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/Leccion"
             android:layout_centerHorizontal="true"
-
             android:text="Metodologia AGIL" />
 
         <Button
@@ -57,7 +56,5 @@
             android:layout_below="@id/boton1"
             android:layout_centerHorizontal="true"
             android:text="Desarollo de software" />
-
     </RelativeLayout>
-
 </RelativeLayout>

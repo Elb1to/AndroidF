@@ -1,4 +1,4 @@
-package gg.rubit.Adaptadores;
+package gg.rubit.adapters;
 
 import android.content.Context;
 import android.os.StrictMode;
@@ -9,17 +9,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import gg.rubit.Entidades.DatosConversacion;
+import gg.rubit.data.ConversationDataValues;
 import gg.rubit.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConversacionListViewAdapter extends ArrayAdapter<DatosConversacion> {
+public class ConversacionListViewAdapter extends ArrayAdapter<ConversationDataValues> {
 
-    List<DatosConversacion> Dialog = new ArrayList<>();
+    List<ConversationDataValues> Dialog = new ArrayList<>();
 
-    public ConversacionListViewAdapter(Context context, List<DatosConversacion> datos) {
+    public ConversacionListViewAdapter(Context context, List<ConversationDataValues> datos) {
         super(context, R.layout.listview_chats, datos);
         Dialog = datos;
 

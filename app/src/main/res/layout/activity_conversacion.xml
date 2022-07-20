@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_green_light"
         android:text="Siguiente"
-        android:onClick="AvanzarCuento"/>
+        android:onClick="proceedStory"/>
 
     <Button
         android:layout_width="wrap_content"
