@@ -30,14 +30,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AuthMessageActivity extends AppCompatActivity {
-    DatabaseManager database;
-    //ImageView imgCargando;
-    TextView txtNombre,txtCorreo;
+    ImageView imgCargando;
+    TextView txtNombre,txtApellido,txtCorreo,txtCedula;
 
-    private String nombre,correo,userType;
+    private String Nombre, Apellido,Correo,Cedula,userType;
     private int type;
 
-    //Intent i;
+    Intent i;
     //AnimationDrawable animationDrawable;
     MediaPlayer click, music;
 
@@ -45,33 +44,15 @@ public class AuthMessageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mensaje_login);
+        i = getIntent();
+        Nombre = i.getStringExtra("Nombre");
+        Apellido = i.getStringExtra("Apellido");
+        Correo = i.getStringExtra("Correo");
+        Cedula = i.getStringExtra("Cedula");
 
-        User user = database.getUserSession();
-        try {
-            click.start();
-            String user = userEmail.getText().toString();
-            String pass = userPassword.getText().toString();
+        imgCargando = (ImageView)findViewById(R.id.imgCargando);
+        imgCargando.setBackgroundResource(R.drawable.cargando);
 
-                Call<List<UserData>> response = ApiService.getApiService().getDataUser();
-                response.enqueue(new Callback<List<UserData>>() {
-                    @Override
-                    public void onResponse(Call<List<UserData>> call, Response<List<UserData>> response) {
-                        if (response.isSuccessful()){
-                            List<UserData> table = response.body();
-                            
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<List<UserData>> call, Throwable t) {
-
-                    }
-                });
-
-        }
-
-        nombre = user.getName();
-        correo = user.getEmail();
 
         type = 3;
 
@@ -98,9 +79,12 @@ public class AuthMessageActivity extends AppCompatActivity {
         }
 
         txtNombre = (TextView) findViewById(R.id.nombre);
+        txtCorreo = (TextView) findViewById(R.id.correo);
+        txtCorreo = (TextView) findViewById(R.id.correo);
 
-        txtNombre.setText(userType + "\n" + nombre);
-        txtCorreo.setText(correo);
+        txtNombre.setText(userType + "\n" + Nombre);
+        txtCorreo.setText(Correo);
+        txtCorreo.setText(Cedula);
         //imgCargando = (ImageView)findViewById(R.id.imgCargando);
         //imgCargando.setBackgroundResource(R.drawable.cargando);
     }

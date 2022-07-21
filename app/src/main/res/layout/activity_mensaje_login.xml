@@ -38,6 +38,20 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
 
+        <EditText
+            android:id="@+id/apellido"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/input"
+            android:drawableStart="@drawable/emailcustom"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/m"
+            android:hint="Apellido"
+            android:inputType="text"
+            android:paddingStart="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/correo"
@@ -50,6 +64,36 @@
             android:fontFamily="@font/m"
             android:hint="Correo"
             android:inputType="textEmailAddress"
+            android:paddingStart="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <EditText
+            android:id="@+id/cedula"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/input"
+            android:drawableStart="@drawable/emailcustom"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/m"
+            android:hint="cedula"
+            android:inputType="text"
+            android:paddingStart="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/input"
+            android:drawableStart="@drawable/emailcustom"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/m"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
             android:paddingStart="12dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />

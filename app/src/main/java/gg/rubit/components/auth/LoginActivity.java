@@ -81,10 +81,13 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Login Exitoso", Toast.LENGTH_LONG).show();
                             estudiante.setTipo(3);
 
-                            //Intent i = new Intent(getApplicationContext(), AuthMessageActivity.class);
-                            //i.putExtra("Nombre", estudiante.getNombre());
-                            //i.putExtra("Tipaje", estudiante.getTipo());
                             Intent i = new Intent(getApplicationContext(), NavigationBarUI.class);
+                            i.putExtra("Nombre", estudiante.getNombre());
+                            i.putExtra("Apellido", estudiante.getApellido());
+                            i.putExtra("Cedula", estudiante.getCedula());
+                            i.putExtra("Correo", estudiante.getCorreo());
+
+
                             startActivity(i);
                         }
                     } else {
