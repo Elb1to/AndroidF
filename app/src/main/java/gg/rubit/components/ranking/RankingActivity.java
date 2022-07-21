@@ -29,7 +29,7 @@ public class RankingActivity extends AppCompatActivity {
 
     ImageView imgCargando;
     AnimationDrawable animationDrawable;
-    MediaPlayer click, music;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,17 +43,14 @@ public class RankingActivity extends AppCompatActivity {
         animationDrawable = (AnimationDrawable)imgCargando.getBackground();
         animationDrawable.start();
 
-        click = MediaPlayer.create(this, R.raw.click);
 
-        music = MediaPlayer.create(this, R.raw.born);
-        music.start();
 
         InicializarControles();
         LoadListView(0);
     }
 
     private void LoadListView(int n) {
-        Call<List<CVID_Tabla>> response = ApiService.getApiService().getPuntaje();
+        Call<List<CVID_Tabla>> response = ApiService.getApiService().getRanking();
         response.enqueue(new Callback<List<CVID_Tabla>>() {
             @Override
             public void onResponse(Call<List<CVID_Tabla>> call, Response<List<CVID_Tabla>> response) {
@@ -78,20 +75,16 @@ public class RankingActivity extends AppCompatActivity {
     }
 
     public void General(View v){
-        click.start();
+
         tipo=1;
         LoadListView(tipo);
     }
 
     public void Local(View v){
-        click.start();
+
         tipo=0;
         LoadListView(tipo);
     }
 
-    @Override
-    protected void onPause(){
-        super.onPause();
-        music.pause();
-    }
+
 }

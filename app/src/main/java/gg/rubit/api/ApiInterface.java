@@ -42,4 +42,10 @@ public interface ApiInterface {
 
     @GET("datos_usuarios")
     Call<List<UserResponse>> getDataUser();
+
+    @GET("ranking")
+    Call<List<CVID_Tabla>> getRanking();
+
+    @GET("ranking2")
+    Call<List<CVID_Tabla>> getRanking2();
 }

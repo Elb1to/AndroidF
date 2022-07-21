@@ -34,23 +34,13 @@ public class TablaListViewAdapter extends ArrayAdapter<CVID_Tabla> {
         TextView pos = (TextView) item.findViewById(R.id.txtPosicion);
         pos.setText("Posición: " + x);*/
 
-        TextView juego = (TextView)item.findViewById(R.id.lslblJuego);
-        juego.setText("Juego: " + tabla.get(position).getJuego());
-
         TextView jugador = (TextView)item.findViewById(R.id.lslblJugador);
-        jugador.setText("Jugador: "+tabla.get(position).getJugador());
+        jugador.setText("Jugador: "+tabla.get(position).getNombre()+' '+tabla.get(position).getApellido());
 
-        TextView nivel = (TextView)item.findViewById(R.id.lslblNivel);
-        nivel.setText("Nivel: "+tabla.get(position).getNivel());
 
         TextView puntaje = (TextView)item.findViewById(R.id.lslblPuntaje);
-        puntaje.setText("Puntaje: "+tabla.get(position).getPuntaje());
+        puntaje.setText("Puntaje: "+tabla.get(position).getPuntajeac());
 
-        TextView fecha = (TextView)item.findViewById(R.id.lslblFecha);
-        fecha.setText("Partida Jugada: "+tabla.get(position).getFecha());
-
-        TextView partida = (TextView)item.findViewById(R.id.lslblPartida);
-        partida.setText("# Partida: "+tabla.get(position).getPartida());
 
         return item;
     }

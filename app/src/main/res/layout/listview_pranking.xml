@@ -10,9 +10,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Posición: "
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="22dp"
-            android:gravity="center"/>
+            android:textAlignment="center"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +30,7 @@
                     android:padding="10dp"
                     android:scrollHorizontally="false"
                     android:text="Jugador"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/white"/>
 
                 <TextView
                     android:id="@+id/lslblPuntaje"
@@ -39,68 +39,11 @@
                     android:textSize="20dp"
                     android:padding="10dp"
                     android:text="Puntaje"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/white"/>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/lslblJuego"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:maxLines="20"
-                    android:layout_weight="1"
-                    android:ellipsize="none"
-                    android:padding="10dp"
-                    android:scrollHorizontally="false"
-                    android:text="Juego"
-                    android:textColor="@color/black"/>
 
 
-                <TextView
-                    android:id="@+id/lslblNivel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:padding="10dp"
-                    android:text="Nivel"
-                    android:textColor="@color/black"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/lslblPartida"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:maxLines="20"
-                    android:layout_weight="1"
-                    android:ellipsize="none"
-                    android:padding="10dp"
-                    android:scrollHorizontally="false"
-                    android:text="1"
-                    android:textColor="@color/black"/>
-
-
-                <TextView
-                    android:id="@+id/lslblFecha"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:padding="10dp"
-                    android:text="Fecha"
-                    android:textColor="@color/black"/>
-
-        </LinearLayout>
 
 </LinearLayout>

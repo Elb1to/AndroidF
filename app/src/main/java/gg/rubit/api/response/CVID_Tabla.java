@@ -1,58 +1,40 @@
 package gg.rubit.api.response;
 
 public class CVID_Tabla {
-    private String juego;
-    private String partida;
-    private String jugador;
-    private String nivel;
-    private String fecha;
-    private String puntaje;
+    private String correo;
+    private String nombre;
+    private String apellido;
+    private int puntajeac;
 
-    public String getJuego() {
-        return juego;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setJuego(String juego) {
-        this.juego = juego;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
-    public String getPartida() {
-        return partida;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setPartida(String partida) {
-        this.partida = partida;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getJugador() {
-        return jugador;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setJugador(String jugador) {
-        this.jugador = jugador;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getNivel() {
-        return nivel;
+    public int getPuntajeac() {
+        return puntajeac;
     }
 
-    public void setNivel(String nivel) {
-        this.nivel = nivel;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getPuntaje() {
-        return puntaje;
-    }
-
-    public void setPuntaje(String puntaje) {
-        this.puntaje = puntaje;
+    public void setPuntajeac(int puntajeac) {
+        this.puntajeac = puntajeac;
     }
 }
