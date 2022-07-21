@@ -1,9 +1,12 @@
 package gg.rubit.api;
 
+import android.service.autofill.UserData;
+
 import java.util.List;
 
 import gg.rubit.api.request.RequestGame;
 import gg.rubit.api.request.RequestUser;
+import gg.rubit.api.response.CVID_Tabla;
 import gg.rubit.api.response.IdResponse;
 import gg.rubit.api.response.PairsResponse;
 import gg.rubit.api.response.UserResponse;
@@ -33,4 +36,10 @@ public interface ApiInterface {
 
     @GET("preguntas_pareo")
     Call<List<PairsResponse>> getPairsList();
+
+    @GET("datos_usuarios")
+    Call<List<CVID_Tabla>> getPuntaje();
+
+    @GET("usuarios")
+    Call<List<UserData>> getDataUser();
 }

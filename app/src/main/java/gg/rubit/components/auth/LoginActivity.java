@@ -16,6 +16,7 @@ import gg.rubit.api.request.RequestUser;
 import gg.rubit.api.response.UserResponse;
 import gg.rubit.data.User;
 import gg.rubit.database.DatabaseManager;
+import gg.rubit.ui.bar.navigation.NavigationBarUI;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -80,10 +81,10 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Login Exitoso", Toast.LENGTH_LONG).show();
                             estudiante.setTipo(3);
 
-                            Intent i = new Intent(getApplicationContext(), AuthMessageActivity.class);
-                            i.putExtra("Nombre", estudiante.getNombre());
-                            i.putExtra("Tipaje", estudiante.getTipo());
-
+                            //Intent i = new Intent(getApplicationContext(), AuthMessageActivity.class);
+                            //i.putExtra("Nombre", estudiante.getNombre());
+                            //i.putExtra("Tipaje", estudiante.getTipo());
+                            Intent i = new Intent(getApplicationContext(), NavigationBarUI.class);
                             startActivity(i);
                         }
                     } else {

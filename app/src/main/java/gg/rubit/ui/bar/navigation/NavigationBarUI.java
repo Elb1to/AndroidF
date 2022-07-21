@@ -2,6 +2,7 @@ package gg.rubit.ui.bar.navigation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -10,21 +11,22 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import gg.rubit.R;
+import gg.rubit.components.auth.AuthMessageActivity;
 import gg.rubit.components.help.HelpActivity;
+import gg.rubit.components.lessons.LessonActivity;
 import gg.rubit.components.play.PlayActivity;
 import gg.rubit.components.ranking.RankingActivity;
 import gg.rubit.components.auth.PerfilFragment;
 import gg.rubit.components.lessons.LeccionesFragment;
+import gg.rubit.components.ranking.RankingFragment;
 
 public class NavigationBarUI extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
 
-    RankingActivity rankingFragment = new RankingActivity();
+    RankingFragment rankingFragment = new RankingFragment();
     PlayActivity jugarFragment = new PlayActivity();
     HelpActivity ayudaFragment = new HelpActivity();
-    PerfilFragment perfilFragment = new PerfilFragment();
-    LeccionesFragment leccionesFragment = new LeccionesFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +46,13 @@ public class NavigationBarUI extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.lecciones:
-                        //startActivity(new Intent(getApplicationContext(), LessonActivity.class));
+                        startActivity(new Intent(getApplicationContext(), LessonActivity.class));
                         return true;
                     case R.id.ranking:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,rankingFragment).commit();
                         return true;
                     case R.id.perfil:
-                        //startActivity(new Intent(getApplicationContext(), AuthMessageActivity.class));
+                        startActivity(new Intent(getApplicationContext(), AuthMessageActivity.class));
                         return true;
                     case R.id.jugar:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,jugarFragment).commit();
