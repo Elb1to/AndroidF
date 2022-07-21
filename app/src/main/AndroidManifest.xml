@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Rubit"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".NavBar.NavBar"
+            android:name=".ui.bar.navigation.NavigationBarUI"
             android:exported="false"
             android:label="@string/title_activity_nav_bar"
             android:theme="@style/Theme.Rubit.NoActionBar" />

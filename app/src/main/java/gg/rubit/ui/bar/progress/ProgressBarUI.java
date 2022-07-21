@@ -1,4 +1,4 @@
-package gg.rubit.ui.bar;
+package gg.rubit.ui.bar.progress;
 
 import android.os.Bundle;
 import android.widget.Button;

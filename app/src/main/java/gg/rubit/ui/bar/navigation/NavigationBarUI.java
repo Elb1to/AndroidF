@@ -1,4 +1,4 @@
-package gg.rubit.NavBar;
+package gg.rubit.ui.bar.navigation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,19 +10,19 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import gg.rubit.R;
-import gg.rubit.components.Ayuda.AyudaActivity;
-import gg.rubit.components.Jugar.JugarActivity;
-import gg.rubit.components.Ranking.RankingActivity;
+import gg.rubit.components.help.HelpActivity;
+import gg.rubit.components.play.PlayActivity;
+import gg.rubit.components.ranking.RankingActivity;
 import gg.rubit.components.auth.PerfilFragment;
 import gg.rubit.components.lessons.LeccionesFragment;
 
-public class NavBar extends AppCompatActivity {
+public class NavigationBarUI extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
 
     RankingActivity rankingFragment = new RankingActivity();
-    JugarActivity jugarFragment = new JugarActivity();
-    AyudaActivity ayudaFragment = new AyudaActivity();
+    PlayActivity jugarFragment = new PlayActivity();
+    HelpActivity ayudaFragment = new HelpActivity();
     PerfilFragment perfilFragment = new PerfilFragment();
     LeccionesFragment leccionesFragment = new LeccionesFragment();
 

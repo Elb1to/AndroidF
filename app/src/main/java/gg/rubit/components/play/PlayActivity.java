@@ -1,4 +1,4 @@
-package gg.rubit.components.Ranking;
+package gg.rubit.components.play;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,12 +9,12 @@ import androidx.fragment.app.Fragment;
 
 import gg.rubit.R;
 
-public class RankingActivity extends Fragment {
+public class PlayActivity extends Fragment {
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_ranking, container, false);
+        return inflater.inflate(R.layout.fragment_ayuda, container, false);
     }
 }

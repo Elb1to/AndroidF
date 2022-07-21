@@ -1,4 +1,4 @@
-package gg.rubit.components.Ayuda;
+package gg.rubit.components.help;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment;
 
 import gg.rubit.R;
 
-public class AyudaActivity extends Fragment {
+public class HelpActivity extends Fragment {
 
 
     @Override
