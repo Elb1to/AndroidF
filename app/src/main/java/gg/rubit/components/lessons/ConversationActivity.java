@@ -1,5 +1,6 @@
 package gg.rubit.components.lessons;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -87,7 +88,7 @@ public class ConversationActivity extends AppCompatActivity {
         }
     }
 
-    /*public void IrAlInicio(View v) {
-        startActivity(new Intent(getApplicationContext(), CrearDatos.class));
-    }*/
+    public void IrAlInicio(View v) {
+        startActivity(new Intent(getApplicationContext(), LessonActivity.class));
+    }
 }

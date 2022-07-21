@@ -1,4 +1,4 @@
-/*package gg.rubit.adapters;
+package gg.rubit.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,9 +11,9 @@ import android.widget.TextView;
 import java.util.List;
 
 import gg.rubit.R;
-import gg.rubit.data.Pairs;
 
-public class WordPairsAdapter extends ArrayAdapter<Pairs> {
+
+/*public class WordPairsAdapter extends ArrayAdapter<Pairs> {
 
     private final List<Pairs> pairsList;
 

@@ -16,7 +16,7 @@ public class DatabaseManager {
     DatabaseHelper databaseHelper;
 
     public DatabaseManager(Context context) {
-        databaseHelper = new DatabaseHelper(context, "juego", null, 1);
+        databaseHelper = new DatabaseHelper(context, "juegos", null, 1);
     }
 
     public long insertGameAnswer(Game game, int gameId) {

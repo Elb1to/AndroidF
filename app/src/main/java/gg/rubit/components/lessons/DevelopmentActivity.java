@@ -13,29 +13,23 @@ import gg.rubit.R;
 public class DevelopmentActivity extends AppCompatActivity {
 
     private Button video, chat;
-    private ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_des);
-
         initializeControllers();
 
-        video.setOnClickListener(view -> {
+        chat.setOnClickListener(view -> {
             startActivity(new Intent(DevelopmentActivity.this, VideoLessonActivity.class));
         });
 
-        chat.setOnClickListener(view -> Toast.makeText(this, "deberia ir a la leccion cuento", Toast.LENGTH_LONG).show());
-
-        back.setOnClickListener(view -> {
-            startActivity(new Intent(DevelopmentActivity.this, LessonActivity.class));
+        video.setOnClickListener(view -> {
+            startActivity(new Intent(DevelopmentActivity.this, ConversationActivity.class));
         });
     }
-
     private void initializeControllers() {
         video = findViewById(R.id.Dleccion1);
         chat = findViewById(R.id.Dleccion2);
-        back = findViewById(R.id.back);
     }
 }

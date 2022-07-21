@@ -123,7 +123,7 @@ public class Pairs {
     public int getPairsGameId(String texto, Context context) {
         int id = 0;
         try {
-            DatabaseHelper dbHelper = new DatabaseHelper(context, "frograming");
+           DatabaseHelper dbHelper = new DatabaseHelper(context, "frograming");
             SQLiteDatabase db = dbHelper.getReadableDatabase();
             if (db != null) {
                 String[] campos = new String[]{"orden_pareo"};

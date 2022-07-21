@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import gg.rubit.NavBar.NavBar;
 import gg.rubit.R;
 
 public class AuthMessageActivity extends AppCompatActivity {
@@ -65,7 +66,7 @@ public class AuthMessageActivity extends AppCompatActivity {
 
     public void Menu(View v) {
         click.start();
-        startActivity(new Intent(getApplicationContext(), AuthMessageActivity.class));
+        startActivity(new Intent(getApplicationContext(), NavBar.class));
     }
 
     public void utpLogo(View view) {

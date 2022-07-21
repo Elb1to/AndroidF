@@ -12,9 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rubit"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".NavBar.NavBar"
+            android:exported="false"
+            android:label="@string/title_activity_nav_bar"
+            android:theme="@style/Theme.Rubit.NoActionBar" />
         <activity
             android:name="gg.rubit.components.lessons.VideoLessonActivity"
+            android:exported="false" />
+        <activity
+            android:name="gg.rubit.components.lessons.LessonActivity"
+            android:exported="false" />
+        <activity
+            android:name="gg.rubit.components.lessons.DevelopmentActivity"
+            android:exported="false" />
+        <activity
+            android:name="gg.rubit.components.lessons.EngineeringActivity"
             android:exported="false" />
         <activity
             android:name="gg.rubit.components.lessons.ConversationActivity"
@@ -30,6 +43,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -38,4 +52,5 @@
         <activity android:name="gg.rubit.components.auth.PasswordRecoveryActivity" />
         <activity android:name="gg.rubit.components.auth.LoginActivity" />
     </application>
+
 </manifest>

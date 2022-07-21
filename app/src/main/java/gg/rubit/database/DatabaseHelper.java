@@ -11,8 +11,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     String cvid_usuario = "CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT,correo TEXT, password TEXT)";
     String cvid_sesion = "CREATE TABLE session (id INTEGER, user TEXT, nombre TEXT)";
 
-    public DatabaseHelper(Context contex, String dbName, SQLiteDatabase.CursorFactory cursor, int dbVersion) {
-        super(contex, dbName, cursor, dbVersion);
+
+
+    public DatabaseHelper(Context contex, String dbName, SQLiteDatabase.CursorFactory cursor, int dbVersion){
+        super(contex,dbName,cursor,dbVersion);
     }
 
     @Override

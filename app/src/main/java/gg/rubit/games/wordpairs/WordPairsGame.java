@@ -1,4 +1,4 @@
-/*package gg.rubit.games.wordpairs;
+package gg.rubit.games.wordpairs;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -14,15 +14,15 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import gg.rubit.R;
-import gg.rubit.adapters.WordPairsAdapter;
+//import gg.rubit.adapters.WordPairsAdapter;
 import gg.rubit.api.ApiService;
 import gg.rubit.api.response.PairsResponse;
-import gg.rubit.data.Pairs;
+//import gg.rubit.data.Pairs;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class WordPairsGame extends AppCompatActivity {
+/*public class WordPairsGame extends AppCompatActivity {
 
     private ListView lstPareo;
     private ListView lstPareo2;
@@ -188,5 +188,5 @@ public class WordPairsGame extends AppCompatActivity {
                 time.schedule(timerTask, 250);
             }
         }
-    }
-}*/
+    } */
+
