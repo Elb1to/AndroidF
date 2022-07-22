@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@color/MoradoFondo"
     android:layout_height="match_parent"
-    tools:context=".components.puntos.Puntaje">
+    tools:context=".components.puntos.PuntosActivity">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -37,15 +37,15 @@
                 android:rotation="-4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tus puentes fueron:"/>
+                android:text="Tus Puntos fueron:"/>
 
             <TextView
-                android:id="@+id/pts"
+                android:id="@+id/txtPuntos"
                 android:layout_width="309dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:rotation="-4"
-                android:text="25"
+                android:text="00"
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:textSize="75dp" />
