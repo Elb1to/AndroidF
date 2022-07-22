@@ -13,9 +13,6 @@
         android:theme="@style/Theme.Rubit"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".HelpUI"
-            android:exported="false" />
-        <activity
             android:name=".ui.bar.navigation.NavigationBarUI"
             android:exported="false"
             android:label="@string/title_activity_nav_bar"
@@ -50,6 +47,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.help.HelpUI" />
         <activity android:name="gg.rubit.components.auth.AuthMessageActivity" />
         <activity android:name="gg.rubit.components.auth.RegisterActivity" />
         <activity android:name="gg.rubit.components.auth.PasswordRecoveryActivity" />
