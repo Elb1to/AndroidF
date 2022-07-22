@@ -1,5 +1,6 @@
 package gg.rubit.components.ranking;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -28,30 +29,27 @@ public class RankingPodioActivity extends AppCompatActivity {
     TextView titulo, subtitulo;
 
     LinearLayout ll1, ll2, ll3;
-
     List<RankingPodioRequest> ranking = new ArrayList<>();
-
     //ObjectAnimator tituloAnimator,subtituloAnimator,im1Animator;
 
     Animation tituloAn, subAn, imv1An, nomAn1, puntAn1, imv2An, nomAn2, puntAn2, imv3An, nomAn3, puntAn3;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking_podio);
 
-        InicializarControles();
+        initializeControllers();
         titulo.startAnimation(tituloAn);
         titulo.setText("¡Llegaron los resultados!");
         subtitulo.startAnimation(subAn);
         subtitulo.setText("Estos son los ganadores.");
-        //AnimarUI();
-        SetearRanking();
 
+        //AnimarUI();
+        setRanking();
     }
 
-    private void InicializarControles() {
+    private void initializeControllers() {
         titulo = findViewById(R.id.titulo);
         subtitulo = findViewById(R.id.subitulo);
 
@@ -86,20 +84,19 @@ public class RankingPodioActivity extends AppCompatActivity {
         puntAn3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.set);
     }
 
-    public List<RankingPodioRequest> SetearRanking() {
+    public void setRanking() {
         try {
             Call<List<RankingPodioRequest>> response = ApiService.getApiService().getParticipantes();
             response.enqueue(new Callback<List<RankingPodioRequest>>() {
                 @Override
                 public void onResponse(Call<List<RankingPodioRequest>> call, Response<List<RankingPodioRequest>> response) {
                     if (response.isSuccessful()) {
-
                         List<RankingPodioRequest> rankingList = response.body();
                         for (RankingPodioRequest list : rankingList) {
-                            ranking.add(new RankingPodioRequest(list.getNombre(), list.getApellido(), list.getPuntajeac()));
-                            System.out.println(list.getNombre() + " " + list.getApellido() + " " + list.getPuntajeac());
+                            ranking.add(new RankingPodioRequest(list.getFirstName(), list.getLastName(), list.getScore()));
+                            System.out.println(list.getFirstName() + " " + list.getLastName() + " " + list.getScore());
                         }
-                        SetearValoreUi(ranking);
+                        setValuesForUI(ranking);
                     } else {
                         Toast.makeText(getApplicationContext(), "Hubo un error al conseguir los datos!!", Toast.LENGTH_SHORT).show();
                     }
@@ -110,56 +107,49 @@ public class RankingPodioActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Hubo un error al conseguir los datos!!", Toast.LENGTH_SHORT).show();
                 }
             });
-
-        } catch (Exception e) {
-
+        } catch (Exception ignored) {
         }
-        return ranking;
+
     }
 
-    public void SetearValoreUi(List<RankingPodioRequest> ranking) {
-
+    @SuppressLint("SetTextI18n")
+    public void setValuesForUI(List<RankingPodioRequest> ranking) {
         imv1.startAnimation(imv1An);
         imv1.setImageResource(R.drawable.gold);
 
         nombre1.startAnimation(nomAn1);
-        nombre1.setText(ranking.get(0).getNombre() + " " + ranking.get(0).getApellido());
+        nombre1.setText(ranking.get(0).getFirstName() + " " + ranking.get(0).getLastName());
 
         punto1.startAnimation(puntAn1);
-        punto1.setText(Long.toString(ranking.get(0).getPuntajeac()));
+        punto1.setText(Long.toString(ranking.get(0).getScore()));
 
         imv2.startAnimation(imv2An);
         imv2.setImageResource(R.drawable.silver);
 
         nombre2.startAnimation(nomAn2);
-        nombre2.setText(ranking.get(1).getNombre() + " " + ranking.get(1).getApellido());
+        nombre2.setText(ranking.get(1).getFirstName() + " " + ranking.get(1).getLastName());
 
         punto2.startAnimation(puntAn2);
-        punto2.setText(Long.toString(ranking.get(1).getPuntajeac()));
+        punto2.setText(Long.toString(ranking.get(1).getScore()));
 
         imv3.startAnimation(imv3An);
         imv3.setImageResource(R.drawable.bronce);
 
         nombre3.startAnimation(nomAn3);
-        nombre3.setText(ranking.get(2).getNombre() + " " + ranking.get(2).getApellido());
+        nombre3.setText(ranking.get(2).getFirstName() + " " + ranking.get(2).getLastName());
 
         punto3.startAnimation(puntAn3);
-        punto3.setText(Long.toString(ranking.get(2).getPuntajeac()));
-
-
+        punto3.setText(Long.toString(ranking.get(2).getScore()));
     }
-    /*
 
-    private void AnimarTitulos(){
+    /*private void AnimarTitulos(){
         tituloAnimator = ObjectAnimator.ofFloat(titulo,View.TRANSLATION_Y, titulo.getTranslationY() + 100f,titulo.getTranslationY());
         tituloAnimator.setDuration(2000);
         tituloAnimator.start();
         titulo.setText("¡Llegaron los resultados!");
-
     }
 
     private void AnimarSubtitulo(){
-
         subtituloAnimator = ObjectAnimator.ofFloat(subtitulo,View.TRANSLATION_Y, subtitulo.getTranslationY() + 100f,subtitulo.getTranslationY());
         subtituloAnimator.setStartDelay(4000);
         subtituloAnimator.setDuration(2000);

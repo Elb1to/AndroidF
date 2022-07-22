@@ -1,47 +1,38 @@
 package gg.rubit.api.request;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class RankingPodioRequest {
 
+    private String firstName;
+    private String lastName;
+    private long score;
 
-    private String nombre;
-    private String apellido;
-    private long puntajeac;
-
-    public RankingPodioRequest(String nombre, String apellido, long puntajeac) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.puntajeac = puntajeac;
+    public RankingPodioRequest(String firstName, String lastName, long score) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.score = score;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getFirstName() {
+        return firstName;
     }
 
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-
-    public String getApellido() {
-        return apellido;
+    public String getLastName() {
+        return lastName;
     }
 
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-
-    public long getPuntajeac() {
-        return puntajeac;
+    public long getScore() {
+        return score;
     }
 
-
-    public void setPuntajeac(long puntajeac) {
-        this.puntajeac = puntajeac;
+    public void setScore(long score) {
+        this.score = score;
     }
 }
