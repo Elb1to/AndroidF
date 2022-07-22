@@ -1,9 +1,8 @@
 package gg.rubit.api;
 
-import android.service.autofill.UserData;
-
 import java.util.List;
 
+import gg.rubit.api.request.RankingPodioRequest;
 import gg.rubit.api.request.RequestGame;
 import gg.rubit.api.request.RequestUser;
 import gg.rubit.api.response.CVID_Tabla;
@@ -48,4 +47,7 @@ public interface ApiInterface {
 
     @GET("ranking2")
     Call<List<CVID_Tabla>> getRanking2();
+
+    @GET("datos_usuarios3")
+    Call<List<RankingPodioRequest>> getParticipantes();
 }

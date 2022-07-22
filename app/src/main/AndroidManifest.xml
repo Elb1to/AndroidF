@@ -39,11 +39,18 @@
             android:name="gg.rubit.ui.tutorial.TutorialMainActivity"
             android:exported="false" />
         <activity
+            android:name="gg.rubit.components.ranking.RankingPodioActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="gg.rubit.ui.loading.LoadingUI"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
