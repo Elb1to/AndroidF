@@ -1,4 +1,4 @@
-package com.example.lecchat.DatosConversacion;
+package gg.rubit.components.conversation.DatosConversacion;
 
 public class SubTemas {
 

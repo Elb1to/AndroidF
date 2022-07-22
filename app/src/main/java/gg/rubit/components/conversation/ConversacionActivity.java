@@ -1,23 +1,20 @@
-package com.example.lecchat;
+package gg.rubit.components.conversation;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.lecchat.Adaptadores.ConversacionListViewAdapter;
-import com.example.lecchat.DatosConversacion.DatosConversacion;
-import com.example.lecchat.Servicios.APIServicesGenerator;
-import com.example.lecchat.Servicios.InterfacesAPI;
-import com.example.lecchat.Servicios.ResponseEventHandler;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
+import gg.rubit.R;
+import gg.rubit.api.ApiService;
+import gg.rubit.components.conversation.Adaptadores.ConversacionListViewAdapter;
+import gg.rubit.components.conversation.DatosConversacion.DatosConversacion;
+import gg.rubit.events.ResponseEventHandler;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,8 +24,8 @@ public class ConversacionActivity extends AppCompatActivity {
     ListView lstConversacion;
     ConversacionListViewAdapter adapter;
     ResponseEventHandler responseEventHandler = new ResponseEventHandler();
-    int size=0, count=0;
-    int value=0;
+    int size = 0, count = 0;
+    int value = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,47 +41,37 @@ public class ConversacionActivity extends AppCompatActivity {
     }
 
     private void startUI() {
-        lstConversacion = (ListView) findViewById(R.id.lstChats);
+        lstConversacion = findViewById(R.id.lstChats);
     }
 
     public void ActualizarDatoslst() {
-
         lstConversacion.setAdapter(adapter);
     }
 
-    private void AttachEvents(){
-        lstConversacion.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String Audio =  ((TextView)view.findViewById(R.id.lblaudio)).getText().toString();
-                responseEventHandler.playMp3(Audio);
-            }
+    private void AttachEvents() {
+        lstConversacion.setOnItemClickListener((adapterView, view, i, l) -> {
+            String Audio = ((TextView) view.findViewById(R.id.lblaudio)).getText().toString();
+            responseEventHandler.playMp3(Audio);
         });
     }
 
     public void ObtenerDialogos() {
-
-        InterfacesAPI service = APIServicesGenerator.createService(InterfacesAPI.class);
-        Call<List<DatosConversacion>> call = service.getListDialogs(value);
-
+        Call<List<DatosConversacion>> call = ApiService.getApiService().getListDialogs(value);
         call.enqueue(new Callback<List<DatosConversacion>>() {
             @Override
             public void onResponse(Call<List<DatosConversacion>> call, Response<List<DatosConversacion>> response) {
-
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     responseEventHandler.setContext(getApplicationContext());
                     size = responseEventHandler.responseReceived(response.body());
 
-                    if(size<1) {
+                    if (size < 1) {
                         Toast.makeText(getApplicationContext(), "No se encontraron mensajes de la leccion", Toast.LENGTH_LONG).show();
-                    }
-                    else {
-                        adapter = new ConversacionListViewAdapter(getApplicationContext(),responseEventHandler.datos(count));
+                    } else {
+                        adapter = new ConversacionListViewAdapter(getApplicationContext(), responseEventHandler.datos(count));
                         AttachEvents();
                         ActualizarDatoslst();
                     }
-                }
-                else {
+                } else {
                     Toast.makeText(getApplicationContext(), "Fallo de api", Toast.LENGTH_LONG).show();
                 }
             }
@@ -97,20 +84,16 @@ public class ConversacionActivity extends AppCompatActivity {
     }
 
     public void AvanzarCuento(View v) {
-
-        if(count + 1 < size) {
+        if (count + 1 < size) {
             count = count + 1;
             responseEventHandler.datos(count);
             ActualizarDatoslst();
-        }
-        else {
+        } else {
             Toast.makeText(this, "Se ha terminado la lección", Toast.LENGTH_LONG).show();
         }
-
     }
 
     /*public void IrAlInicio(View v) {
         startActivity(new Intent(getApplicationContext(), CrearDatos.class));
     }*/
-
 }

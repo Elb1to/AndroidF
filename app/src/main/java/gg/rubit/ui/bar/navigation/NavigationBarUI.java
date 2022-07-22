@@ -11,8 +11,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import gg.rubit.R;
 import gg.rubit.components.auth.AuthMessageActivity;
+import gg.rubit.components.conversation.SelectConversation;
 import gg.rubit.components.help.HelpActivity;
-import gg.rubit.components.lessons.LessonActivity;
 import gg.rubit.components.ranking.RankingActivity;
 import gg.rubit.components.ranking.RankingFragment;
 import gg.rubit.games.wordpicker.WordPickerGameActivity;
@@ -51,7 +51,7 @@ public class NavigationBarUI extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.lecciones:
-                    startActivity(new Intent(getApplicationContext(), LessonActivity.class));
+                    startActivity(new Intent(getApplicationContext(), SelectConversation.class));
                     return true;
                 case R.id.ranking:
                     startActivity(new Intent(getApplicationContext(), RankingActivity.class));

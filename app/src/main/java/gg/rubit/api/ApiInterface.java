@@ -9,12 +9,15 @@ import gg.rubit.api.response.CVID_Tabla;
 import gg.rubit.api.response.IdResponse;
 import gg.rubit.api.response.PairsResponse;
 import gg.rubit.api.response.UserResponse;
+import gg.rubit.components.conversation.DatosConversacion.DatosConversacion;
+import gg.rubit.components.conversation.DatosConversacion.SubTemas;
 import gg.rubit.data.ConversationDataValues;
 import gg.rubit.data.UserDataValues;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiInterface {
 
@@ -53,4 +56,10 @@ public interface ApiInterface {
 
     @GET("datos_usuarios3")
     Call<List<RankingPodioRequest>> getParticipantes();
+
+    @GET("conversacion/{id}")
+    Call<List<DatosConversacion>> getListDialogs(@Path("id") int id);
+
+    @GET("lecciones/{id}")
+    Call<List<SubTemas>> getSubTemas(@Path("id") int id);
 }

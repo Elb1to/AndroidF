@@ -3,12 +3,11 @@ package gg.rubit.components.lessons;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import gg.rubit.R;
+import gg.rubit.components.conversation.ConversacionActivity;
 
 public class EngineeringActivity extends AppCompatActivity {
 
@@ -27,7 +26,7 @@ public class EngineeringActivity extends AppCompatActivity {
         });
 
         video.setOnClickListener(view -> {
-            startActivity(new Intent(EngineeringActivity.this, ConversationActivity.class));
+            startActivity(new Intent(EngineeringActivity.this, ConversacionActivity.class));
         });
     }
 

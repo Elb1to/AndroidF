@@ -7,39 +7,34 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import gg.rubit.data.ConversationDataValues;
+import gg.rubit.components.conversation.DatosConversacion.DatosConversacion;
 
 public class ResponseEventHandler {
 
-    List<ConversationDataValues> fuente = new ArrayList<>();
-    List<ConversationDataValues> Arrlst = new ArrayList<>();
+    List<DatosConversacion> fuente = new ArrayList<>();
+    List<DatosConversacion> Arrlst = new ArrayList<>();
     Context context;
-    int e=0;
 
     public void setContext(Context c) {
         context = c;
     }
 
-    public int responseReceived(List<ConversationDataValues> d) {
-
-        for(int i=0;i<d.size();i++) {
-            if(d.get(i).getLecciones_id() == e) {
-                ConversationDataValues obj = new ConversationDataValues();
-                obj.setId(d.get(i).getId());
-                obj.setLecciones_id(d.get(i).getLecciones_id());
-                obj.setPersona(d.get(i).getPersona());
-                obj.setDialog(d.get(i).getDialog());
-                obj.setAudio(d.get(i).getAudio());
-                fuente.add(obj);
-            }
+    public int responseReceived(List<DatosConversacion> d) {
+        for (int i = 0; i < d.size(); i++) {
+            DatosConversacion obj = new DatosConversacion();
+            obj.setId(d.get(i).getId());
+            obj.setLecciones_id(d.get(i).getLecciones_id());
+            obj.setPersona(d.get(i).getPersona());
+            obj.setDialog(d.get(i).getDialog());
+            obj.setAudio(d.get(i).getAudio());
+            fuente.add(obj);
         }
-        return  fuente.size();
+
+        return fuente.size();
     }
 
-    public List<ConversationDataValues> datos (int count)  {
-
-        ConversationDataValues datos = new ConversationDataValues();
-
+    public List<DatosConversacion> datos(int count) {
+        DatosConversacion datos = new DatosConversacion();
         datos.setId(fuente.get(count).getId());
         datos.setLecciones_id(fuente.get(count).getLecciones_id());
         datos.setPersona(fuente.get(count).getPersona());
@@ -47,23 +42,18 @@ public class ResponseEventHandler {
         datos.setAudio(fuente.get(count).getAudio());
         Arrlst.add(datos);
 
-        playMp3(fuente.get(count).getAudio());//Reproducir pista de audio al agregar un nuevo renglon al lst
+        //Reproducir pista de audio al agregar un nuevo renglon al lst
+        playMp3(fuente.get(count).getAudio());
 
         return Arrlst;
     }
 
     public void playMp3(String Audio) {
-
-        if(Audio == null) {
-            Toast.makeText(context,"No se encontro la referencia del audio",Toast.LENGTH_LONG).show();
-        }
-        else  {
+        try {
             MediaPlayer mPlayer = MediaPlayer.create(context, context.getResources().getIdentifier(Audio, "raw", context.getPackageName()));
             mPlayer.start();
+        } catch (Exception e) {
+            Toast.makeText(context, "No se encontro la referencia de audio", Toast.LENGTH_LONG).show();
         }
-    }
-
-    public void selectedoption(int i) {
-        e=i;
     }
 }
