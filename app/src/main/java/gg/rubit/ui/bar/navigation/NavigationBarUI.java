@@ -24,14 +24,20 @@ public class NavigationBarUI extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
 
+    private String Nombre, Apellido,Correo,Cedula;
     RankingFragment rankingFragment = new RankingFragment();
     PlayActivity jugarFragment = new PlayActivity();
     HelpActivity ayudaFragment = new HelpActivity();
-
+    Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_bar);
+        i = getIntent();
+        Nombre = i.getStringExtra("Nombre");
+        Apellido = i.getStringExtra("Apellido");
+        Correo = i.getStringExtra("Correo");
+        Cedula = i.getStringExtra("Cedula");
 
         bottomNavigationView  = findViewById(R.id.bottom_navigation);
 
@@ -52,7 +58,13 @@ public class NavigationBarUI extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), RankingActivity.class));
                         return true;
                     case R.id.perfil:
-                        startActivity(new Intent(getApplicationContext(), AuthMessageActivity.class));
+                        Intent i = new Intent(getApplicationContext(), AuthMessageActivity.class);
+                        i.putExtra("Nombre", Nombre);
+                        i.putExtra("Apellido",Apellido );
+                        i.putExtra("Cedula", Correo);
+                        i.putExtra("Correo",Cedula );
+
+                        startActivity(i);
                         return true;
                     case R.id.jugar:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,jugarFragment).commit();

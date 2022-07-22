@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/ralebo"
-        android:text="Registro"
+        android:text="Perfil"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="35dp" />
@@ -82,21 +82,5 @@
             android:paddingStart="12dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/input"
-            android:drawableStart="@drawable/emailcustom"
-            android:drawablePadding="12dp"
-            android:fontFamily="@font/m"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:paddingStart="12dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
-
     </LinearLayout>
 </LinearLayout>

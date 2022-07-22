@@ -15,7 +15,6 @@ import java.util.List;
 import gg.rubit.R;
 import gg.rubit.adapters.ResumenListViewAdapter;
 import gg.rubit.api.ApiService;
-import gg.rubit.api.request.PartidaRequest;
 import gg.rubit.api.request.RequestGame;
 import gg.rubit.api.response.Partida;
 import gg.rubit.database.DatabaseManager;
@@ -125,18 +124,6 @@ public class PuntosActivity extends AppCompatActivity {
     private void InicializarControles(){
         jugador = (TextView)findViewById(R.id.txtJugador);
         puntaje = (TextView)findViewById(R.id.txtPuntos);
-    }
-
-    public void Utp(View view) {
-        click.start();
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/"));
-        startActivity(i);
-    }
-
-    public void UtpFisc(View view) {
-        click.start();
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/"));
-        startActivity(i);
     }
 
     @Override

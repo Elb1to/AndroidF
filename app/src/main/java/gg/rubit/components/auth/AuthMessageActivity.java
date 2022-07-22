@@ -30,83 +30,41 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AuthMessageActivity extends AppCompatActivity {
-    ImageView imgCargando;
     TextView txtNombre,txtApellido,txtCorreo,txtCedula;
 
-    private String Nombre, Apellido,Correo,Cedula,userType;
+    private String Nombre, Apellido,Correo,Cedula;
     private int type;
 
     Intent i;
-    //AnimationDrawable animationDrawable;
-    MediaPlayer click, music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mensaje_login);
+
+
+
         i = getIntent();
         Nombre = i.getStringExtra("Nombre");
         Apellido = i.getStringExtra("Apellido");
         Correo = i.getStringExtra("Correo");
         Cedula = i.getStringExtra("Cedula");
 
-        imgCargando = (ImageView)findViewById(R.id.imgCargando);
-        imgCargando.setBackgroundResource(R.drawable.cargando);
-
-
-        type = 3;
-
-        //imgCargando = (ImageView)findViewById(R.id.imgCargando);
-        //imgCargando.setBackgroundResource(R.drawable.cargando);
-
-        //animationDrawable = (AnimationDrawable) imgCargando.getBackground();
-       // animationDrawable.start();
-
-        click = MediaPlayer.create(this, R.raw.click);
-        music = MediaPlayer.create(this, R.raw.resum);
-
         initializeControllers();
     }
 
-    public void onResume() {
-        super.onResume();
-        music.start();
-    }
-
     public void initializeControllers() {
-        if (type == 3) {
-            userType = "Estudiante";
-        }
 
-        txtNombre = (TextView) findViewById(R.id.nombre);
-        txtCorreo = (TextView) findViewById(R.id.correo);
-        txtCorreo = (TextView) findViewById(R.id.correo);
+        txtNombre = (TextView)findViewById(R.id.nombre);
+        txtApellido = (TextView)findViewById(R.id.apellido);
+        txtCedula = (TextView)findViewById(R.id.cedula);
+        txtCorreo = (TextView)findViewById(R.id.correo);
 
-        txtNombre.setText(userType + "\n" + Nombre);
-        txtCorreo.setText(Correo);
-        txtCorreo.setText(Cedula);
-        //imgCargando = (ImageView)findViewById(R.id.imgCargando);
-        //imgCargando.setBackgroundResource(R.drawable.cargando);
+        txtNombre.setText("Nombre:"+"\n"+Nombre);
+        txtApellido.setText("Apellido:"+"\n"+Apellido);
+        txtCedula.setText("Correo:"+"\n"+Cedula);
+        txtCorreo.setText("Cedula:"+"\n"+Correo);
     }
 
-    //public void Menu(View v) {
-       // click.start();
-       // startActivity(new Intent(getApplicationContext(), NavigationBarUI.class));
-    //}
 
-    public void utpLogo(View view) {
-        click.start();
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://utp.ac.pa/")));
-    }
-
-    public void fiscLogo(View view) {
-        click.start();
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://fisc.utp.ac.pa/")));
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        music.pause();
-    }
 }
