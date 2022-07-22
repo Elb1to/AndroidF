@@ -16,7 +16,7 @@
             android:name=".ui.bar.navigation.NavigationBarUI"
             android:exported="false"
             android:label="@string/title_activity_nav_bar"
-            android:theme="@style/Theme.Rubit.NoActionBar"/>
+            android:theme="@style/Theme.Rubit.NoActionBar" />
         <activity
             android:name="gg.rubit.components.lessons.VideoLessonActivity"
             android:exported="false" />
@@ -41,9 +41,6 @@
         <activity
             android:name="gg.rubit.components.ranking.RankingPodioActivity"
             android:exported="false" />
-        <activity
-            android:name=".components.puntos.PuntosActivity"
-            android:exported="true"/>
         <activity
             android:name="gg.rubit.ui.loading.LoadingUI"
             android:exported="true">
@@ -73,5 +70,6 @@
         <activity android:name="gg.rubit.components.auth.PasswordRecoveryActivity" />
         <activity android:name="gg.rubit.components.auth.LoginActivity" />
         <activity android:name="gg.rubit.components.ranking.RankingActivity" />
+        <activity android:name="gg.rubit.components.puntos.PuntosActivity" />
     </application>
 </manifest>
