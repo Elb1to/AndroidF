@@ -43,7 +43,7 @@
             android:exported="false" />
         <activity
             android:name=".components.puntos.PuntosActivity"
-            android:exported="false" />
+            android:exported="true"/>
         <activity
             android:name="gg.rubit.ui.loading.LoadingUI"
             android:exported="true">

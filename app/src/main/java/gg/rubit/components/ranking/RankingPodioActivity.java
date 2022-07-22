@@ -2,6 +2,7 @@ package gg.rubit.components.ranking;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -40,6 +41,8 @@ public class RankingPodioActivity extends AppCompatActivity {
 
     Animation tituloAn, subAn, imv1An, nomAn1, puntAn1, imv2An, nomAn2, puntAn2, imv3An, nomAn3, puntAn3;
 
+    MediaPlayer click, music;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +53,10 @@ public class RankingPodioActivity extends AppCompatActivity {
         titulo.setText("¡Llegaron los resultados!");
         subtitulo.startAnimation(subAn);
         subtitulo.setText("Estos son los ganadores.");
+
+        click = MediaPlayer.create(this, R.raw.click);
+        music = MediaPlayer.create(this, R.raw.resum);
+        music.start();
 
         setRanking();
     }

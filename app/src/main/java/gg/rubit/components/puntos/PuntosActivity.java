@@ -18,6 +18,7 @@ import gg.rubit.adapters.ResumenListViewAdapter;
 import gg.rubit.api.ApiService;
 import gg.rubit.api.request.RequestGame;
 import gg.rubit.api.response.Partida;
+import gg.rubit.components.ranking.RankingPodioActivity;
 import gg.rubit.database.DatabaseManager;
 import gg.rubit.ui.bar.navigation.NavigationBarUI;
 import retrofit2.Call;
@@ -44,9 +45,9 @@ public class PuntosActivity extends AppCompatActivity {
         int partida = getIntent().getIntExtra("Partida", 0);
 
         initializeControllers();
-        loadListView(partida);
-        mapValues();
-        saveMatchToApi(partidas);
+        //loadListView(partida);
+        //mapValues();
+        //saveMatchToApi(partidas);
 
         i = getIntent();
         puntos = i.getIntExtra("puntaje", 0);
@@ -59,7 +60,7 @@ public class PuntosActivity extends AppCompatActivity {
     private void saveMatchToApi(List<Partida> partidas) {
         RequestGame request = new RequestGame();
         /*id_usuarios,id_pregunta,Correcto,Puntaje*/
-        request.setNombre(partidas.get(0).getJugador());
+        //request.setNombre(partidas.get(0).getJugador());
         request.setPuntaje(getScore(partidas));
         request.setDetalle(partidas);
 
@@ -86,14 +87,15 @@ public class PuntosActivity extends AppCompatActivity {
 
     public void getGames(View v) {
         click.start();
-        Intent i = new Intent(getApplicationContext(), NavigationBarUI.class);
-        i.putExtra("puntaje", puntos);
+        //Intent i = new Intent(getApplicationContext(), NavigationBarUI.class);
+        //i.putExtra("puntaje", puntos);
+        i = new Intent(getApplicationContext(), RankingPodioActivity.class);
         startActivity(i);
     }
 
     @SuppressLint("SetTextI18n")
     private void mapValues() {
-        jugador.setText(partidas.get(0).getJugador());
+        //jugador.setText(partidas.get(0).getJugador());
         puntaje.setText(Integer.toString(getScore(partidas)));
     }
 
@@ -111,7 +113,7 @@ public class PuntosActivity extends AppCompatActivity {
         partidas = db.ObtenerPartidaById(partida);
 
         ResumenListViewAdapter adapter = new ResumenListViewAdapter(getApplicationContext(), partidas);
-        lstResumen.setAdapter(adapter);
+        //lstResumen.setAdapter(adapter);
     }
 
     private void initializeControllers() {

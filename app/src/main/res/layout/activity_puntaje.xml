@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@color/MoradoFondo"
     android:layout_height="match_parent"
-    tools:context=".components.puntos.Puntaje">
+    tools:context=".components.puntos.PuntosActivity">
 
     <ImageView
         android:layout_width="wrap_content"
