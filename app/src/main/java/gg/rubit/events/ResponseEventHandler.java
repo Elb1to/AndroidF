@@ -7,7 +7,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import gg.rubit.components.conversation.DatosConversacion.DatosConversacion;
+import gg.rubit.components.conversation.data.DatosConversacion;
 
 public class ResponseEventHandler {
 

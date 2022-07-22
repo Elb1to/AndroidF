@@ -15,7 +15,7 @@ import java.util.List;
 
 import gg.rubit.R;
 import gg.rubit.api.ApiService;
-import gg.rubit.components.conversation.DatosConversacion.SubTemas;
+import gg.rubit.components.conversation.data.SubTemas;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

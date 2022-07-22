@@ -1,4 +1,4 @@
-package gg.rubit.components.conversation.DatosConversacion;
+package gg.rubit.components.conversation.data;
 
 public class DatosConversacion {
 

@@ -12,8 +12,8 @@ import java.util.List;
 
 import gg.rubit.R;
 import gg.rubit.api.ApiService;
-import gg.rubit.components.conversation.Adaptadores.ConversacionListViewAdapter;
-import gg.rubit.components.conversation.DatosConversacion.DatosConversacion;
+import gg.rubit.components.conversation.adapters.ConversacionListViewAdapter;
+import gg.rubit.components.conversation.data.DatosConversacion;
 import gg.rubit.events.ResponseEventHandler;
 import retrofit2.Call;
 import retrofit2.Callback;

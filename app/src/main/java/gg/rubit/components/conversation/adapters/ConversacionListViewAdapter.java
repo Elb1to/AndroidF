@@ -1,4 +1,4 @@
-package gg.rubit.components.conversation.Adaptadores;
+package gg.rubit.components.conversation.adapters;
 
 import android.content.Context;
 import android.os.StrictMode;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import gg.rubit.R;
-import gg.rubit.components.conversation.DatosConversacion.DatosConversacion;
+import gg.rubit.components.conversation.data.DatosConversacion;
 
 public class ConversacionListViewAdapter extends ArrayAdapter<DatosConversacion> {
 
