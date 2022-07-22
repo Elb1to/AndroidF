@@ -20,6 +20,7 @@ import java.util.List;
 import gg.rubit.R;
 import gg.rubit.api.ApiService;
 import gg.rubit.api.request.RankingPodioRequest;
+import gg.rubit.ui.bar.navigation.NavigationBarUI;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -91,7 +92,7 @@ public class RankingPodioActivity extends AppCompatActivity {
         continuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),RankingActivity.class));
+                startActivity(new Intent(getApplicationContext(), NavigationBarUI.class));
             }
         });
     }
