@@ -1,9 +1,12 @@
 package gg.rubit.components.ranking;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -30,6 +33,8 @@ public class RankingPodioActivity extends AppCompatActivity {
 
     LinearLayout ll1, ll2, ll3;
     List<RankingPodioRequest> ranking = new ArrayList<>();
+
+    Button continuar;
     //ObjectAnimator tituloAnimator,subtituloAnimator,im1Animator;
 
     Animation tituloAn, subAn, imv1An, nomAn1, puntAn1, imv2An, nomAn2, puntAn2, imv3An, nomAn3, puntAn3;
@@ -45,7 +50,6 @@ public class RankingPodioActivity extends AppCompatActivity {
         subtitulo.startAnimation(subAn);
         subtitulo.setText("Estos son los ganadores.");
 
-        //AnimarUI();
         setRanking();
     }
 
@@ -82,6 +86,14 @@ public class RankingPodioActivity extends AppCompatActivity {
         imv3An = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.set);
         nomAn3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.set);
         puntAn3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.set);
+
+        continuar = findViewById(R.id.btnContinuar);
+        continuar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),RankingActivity.class));
+            }
+        });
     }
 
     public void setRanking() {
