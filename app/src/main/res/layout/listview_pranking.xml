@@ -1,49 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_marginTop="5dp">
+    android:layout_marginTop="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtPosicion"
-            android:layout_width="match_parent"
+            android:id="@+id/lslblJugador"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Posición: "
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:maxLines="20"
+            android:padding="10dp"
+            android:scrollHorizontally="false"
+            android:text="Jugador"
             android:textColor="@color/white"
-            android:textSize="22dp"
-            android:textAlignment="center"/>
+            android:textSize="20dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/lslblPuntaje"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/lslblJugador"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:maxLines="20"
-                    android:layout_weight="1"
-                    android:ellipsize="none"
-                    android:padding="10dp"
-                    android:scrollHorizontally="false"
-                    android:text="Jugador"
-                    android:textColor="@color/white"/>
-
-                <TextView
-                    android:id="@+id/lslblPuntaje"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:padding="10dp"
-                    android:text="Puntaje"
-                    android:textColor="@color/white"/>
-
-        </LinearLayout>
-
-
-
-
+            android:padding="10dp"
+            android:text="Puntaje"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+    </LinearLayout>
 </LinearLayout>
