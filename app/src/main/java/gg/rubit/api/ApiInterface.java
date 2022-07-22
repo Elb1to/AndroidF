@@ -39,6 +39,9 @@ public interface ApiInterface {
     @GET("datos_usuarios")
     Call<List<CVID_Tabla>> getPuntaje();
 
+    @GET("datos_usuario")
+    Call<UserResponse> getUserDataById(@Body Integer userId);
+
     @GET("datos_usuarios")
     Call<List<UserResponse>> getDataUser();
 
