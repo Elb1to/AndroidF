@@ -8,16 +8,18 @@ public class UserDataValues {
     private String apellido;
     private String cedula;
     private String tipo_usuario;
-    private String puntajeac;
+    private int puntajeac;
     private String password;
     private String last_Login;
     private String correo;
 
-    public String getPuntajeac() {
+    // TODO: Hacer consulta -> Mandar usuario
+
+    public Integer getPuntajeac() {
         return puntajeac;
     }
 
-    public void setPuntajeac(String puntajeac) {
+    public void setPuntajeac(int puntajeac) {
         this.puntajeac = puntajeac;
     }
 
@@ -28,7 +30,6 @@ public class UserDataValues {
     public void setId(int id) {
         this.id = id;
     }
-
 
     public int getUsuario_id() {
         return usuario_id;
@@ -74,7 +75,9 @@ public class UserDataValues {
         return password;
     }
 
-    public void setPassword (String password){this.password =password;}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getLast_Login() {
         return last_Login;
