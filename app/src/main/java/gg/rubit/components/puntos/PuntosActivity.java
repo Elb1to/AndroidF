@@ -26,14 +26,10 @@ import retrofit2.Response;
 
 public class PuntosActivity extends AppCompatActivity {
 
-<<<<<<< Updated upstream
     ListView lstResumen;
     TextView jugador, puntaje;
 
     List<Partida> partidas = new ArrayList<>();
-=======
-    TextView puntaje;
->>>>>>> Stashed changes
 
     MediaPlayer click, music;
 
@@ -43,7 +39,6 @@ public class PuntosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< Updated upstream
         setContentView(R.layout.activity_resumen);
 
         int partida = getIntent().getIntExtra("Partida", 0);
@@ -55,18 +50,15 @@ public class PuntosActivity extends AppCompatActivity {
 
         i = getIntent();
         puntos = i.getIntExtra("Puntaje", 0);
-=======
         setContentView(R.layout.activity_puntaje);
         InicializarControles();
         MapearCampos();
->>>>>>> Stashed changes
 
         click = MediaPlayer.create(this, R.raw.click);
         music = MediaPlayer.create(this, R.raw.resum);
         music.start();
     }
 
-<<<<<<< Updated upstream
     private void saveMatchToApi(List<Partida> partidas) {
         RequestGame request = new RequestGame();
         /*id_usuarios,id_pregunta,Correcto,Puntaje*/
@@ -128,16 +120,16 @@ public class PuntosActivity extends AppCompatActivity {
     private void initializeControllers() {
         jugador = findViewById(R.id.txtJugador);
         puntaje = findViewById(R.id.txtPuntos);
-=======
+    }
+
     private void MapearCampos() {
         i = getIntent();
         puntos = i.getIntExtra("puntaje", 0);
         puntaje.setText(Integer.toString(puntos));
     }
 
-    private void InicializarControles(){
-        puntaje = (TextView)findViewById(R.id.txtPuntos);
->>>>>>> Stashed changes
+    private void InicializarControles() {
+        puntaje = (TextView) findViewById(R.id.txtPuntos);
     }
 
     @Override
