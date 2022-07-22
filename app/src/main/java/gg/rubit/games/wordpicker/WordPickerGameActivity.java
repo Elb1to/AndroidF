@@ -119,11 +119,9 @@ public class WordPickerGameActivity extends AppCompatActivity {
             okAlert.show(getSupportFragmentManager(), "Rellenar");
         } else {
             if (rest.equals(res2)) {
-                Toast.makeText(this, "correcto: " + res2, Toast.LENGTH_SHORT).show();
                 ContinueAlert alert = new ContinueAlert("Respuesta correcta");
                 alert.show(getSupportFragmentManager(), "Felicidades");
             } else {
-                Toast.makeText(this, "respuesta correcta: " + res2 + ". Respuesta ingresada: " + rest, Toast.LENGTH_SHORT).show();
                 ContinueAlert alert = new ContinueAlert("Respuesta incorrecta");
                 alert.show(getSupportFragmentManager(), "Incorrecto");
             }
@@ -219,9 +217,6 @@ public class WordPickerGameActivity extends AppCompatActivity {
 
         @NonNull @Override
         public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-            Intent gameIntent = new Intent(getContext(), QuizGameActivity.class);
-            //gameIntent.putExtra("UserId", userId);
-
             return new AlertDialog.Builder(getActivity()).setMessage(message).setPositiveButton("Continuar", (dialogInterface, i) -> startActivity(new Intent(getContext(), QuizGameActivity.class))).create();
         }
     }

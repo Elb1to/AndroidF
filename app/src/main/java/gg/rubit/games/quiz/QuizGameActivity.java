@@ -118,6 +118,7 @@ public class QuizGameActivity extends AppCompatActivity implements View.OnClickL
 
     void restartQuiz() {
         currentIndex = 0;
+
         Intent i = new Intent(getApplicationContext(), PuntosActivity.class);
         i.putExtra("puntaje", score);
         startActivity(i);
