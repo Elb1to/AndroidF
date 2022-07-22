@@ -92,8 +92,4 @@ public class ConversacionActivity extends AppCompatActivity {
             Toast.makeText(this, "Se ha terminado la lección", Toast.LENGTH_LONG).show();
         }
     }
-
-    /*public void IrAlInicio(View v) {
-        startActivity(new Intent(getApplicationContext(), CrearDatos.class));
-    }*/
 }
