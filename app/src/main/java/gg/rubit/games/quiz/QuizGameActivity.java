@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,6 +41,9 @@ public class QuizGameActivity extends AppCompatActivity implements View.OnClickL
     Button opcionA, opcionB, opcionC, opcionD;
     Button siguienteBtn;
 
+    Intent intent;
+
+    int userId;
     int score = 0;
     int questions = question.length;
     int currentIndex = 0;
@@ -49,6 +53,10 @@ public class QuizGameActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz_game_activity);
+
+        intent = getIntent();
+        userId = intent.getIntExtra("UserId", 0);
+        score = intent.getIntExtra("Puntaje", 0);
 
         preguntaTxt = findViewById(R.id.pregunta);
         opcionA = findViewById(R.id.opcion_a);
@@ -104,6 +112,8 @@ public class QuizGameActivity extends AppCompatActivity implements View.OnClickL
         String status = "";
         if (score > questions * 0.60) {
             status = "Respuesta Correcta";
+            score += 5;
+            Toast.makeText(this, "+5 Points! TotalPoints==" + score, Toast.LENGTH_SHORT).show();
         } else {
             status = "Respuesta Incorrecta";
         }
@@ -120,7 +130,9 @@ public class QuizGameActivity extends AppCompatActivity implements View.OnClickL
         currentIndex = 0;
 
         Intent i = new Intent(getApplicationContext(), PuntosActivity.class);
-        i.putExtra("puntaje", score);
+        intent.putExtra("UserId", userId);
+        i.putExtra("Puntaje", score);
+
         startActivity(i);
     }
 }

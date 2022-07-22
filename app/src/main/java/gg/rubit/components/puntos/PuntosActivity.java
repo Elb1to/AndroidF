@@ -49,7 +49,7 @@ public class PuntosActivity extends AppCompatActivity {
         saveMatchToApi(partidas);
 
         i = getIntent();
-        puntos = i.getIntExtra("puntaje", 0);
+        puntos = i.getIntExtra("Puntaje", 0);
 
         click = MediaPlayer.create(this, R.raw.click);
         music = MediaPlayer.create(this, R.raw.resum);
@@ -87,7 +87,7 @@ public class PuntosActivity extends AppCompatActivity {
     public void getGames(View v) {
         click.start();
         Intent i = new Intent(getApplicationContext(), NavigationBarUI.class);
-        i.putExtra("puntaje", puntos);
+        i.putExtra("Puntaje", puntos);
         startActivity(i);
     }
 
