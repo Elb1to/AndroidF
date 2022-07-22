@@ -15,6 +15,7 @@ import java.util.List;
 import gg.rubit.R;
 import gg.rubit.adapters.ResumenListViewAdapter;
 import gg.rubit.api.ApiService;
+import gg.rubit.api.request.PartidaRequest;
 import gg.rubit.api.request.RequestGame;
 import gg.rubit.api.response.Partida;
 import gg.rubit.database.DatabaseManager;
@@ -33,7 +34,7 @@ public class PuntosActivity extends AppCompatActivity {
     MediaPlayer click, music;
 
     Intent i;
-    int Tipo;
+    int puntos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,7 @@ public class PuntosActivity extends AppCompatActivity {
         GuardarPartidaApi(_partidas);
 
         i = getIntent();
-        Tipo = i.getIntExtra("Tipaje", 0);
+        puntos = i.getIntExtra("puntaje", 0);
 
         click = MediaPlayer.create(this, R.raw.click);
 
@@ -58,12 +59,11 @@ public class PuntosActivity extends AppCompatActivity {
 
     private void GuardarPartidaApi(List<Partida> partidas) {
         RequestGame request = new RequestGame();
-        /*ID_Usuario,ID_Pregunta,Correcto,Puntaje*/
+        /*id_usuarios,id_pregunta,Correcto,Puntaje*/
         request.setNombre(partidas.get(0).getJugador());
         request.setPuntaje(ObtenerPuntaje(partidas));
         request.setDetalle(partidas);
 
-        if(Tipo==3) {
 
             Call<Integer> response = ApiService.getApiService().postRegistrarPartida(request);
             response.enqueue(new Callback<Integer>() {
@@ -87,12 +87,11 @@ public class PuntosActivity extends AppCompatActivity {
 
         }
 
-    }
 
     public void RegresarJuegos(View v){
         click.start();
         Intent i = new Intent(getApplicationContext(), NavigationBarUI.class);
-        i.putExtra("Tipaje", Tipo);
+        i.putExtra("puntaje", puntos);
         startActivity(i);
     }
 
@@ -125,6 +124,7 @@ public class PuntosActivity extends AppCompatActivity {
         jugador = (TextView)findViewById(R.id.txtJugador);
         puntaje = (TextView)findViewById(R.id.txtPuntos);
     }
+
 
     @Override
     protected void onPause(){

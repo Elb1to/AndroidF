@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import gg.rubit.R;
+import gg.rubit.components.puntos.PuntosActivity;
 import gg.rubit.ui.bar.navigation.NavigationBarUI;
 
 public class QuizGameActivity extends AppCompatActivity implements View.OnClickListener {
@@ -118,6 +119,8 @@ public class QuizGameActivity extends AppCompatActivity implements View.OnClickL
 
     void restartQuiz() {
         currentIndex = 0;
-        startActivity(new Intent(getApplicationContext(), NavigationBarUI.class));
+        Intent i = new Intent(getApplicationContext(), PuntosActivity.class);
+        i.putExtra("puntaje", score);
+        startActivity(i);
     }
 }
