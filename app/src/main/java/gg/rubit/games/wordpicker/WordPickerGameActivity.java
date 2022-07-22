@@ -31,6 +31,9 @@ public class WordPickerGameActivity extends AppCompatActivity {
     String question = "", answer = "";
     int questionNumber;
 
+    int userId;
+    Intent i;
+
     String[] preguntas = {
             "Ventajas del Patron Command",
             "¿Dónde nace el término scrum?",
@@ -55,6 +58,9 @@ public class WordPickerGameActivity extends AppCompatActivity {
     }
 
     private void initializeControllers() {
+        i = getIntent();
+        userId = i.getIntExtra("UserId", 0);
+
         questionNumber = (int) (Math.random() * 4);
         question = preguntas[questionNumber];
         answer = respuestas[questionNumber];
@@ -199,10 +205,7 @@ public class WordPickerGameActivity extends AppCompatActivity {
 
         @NonNull @Override
         public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setMessage(message).setPositiveButton("OK", (dialogInterface, i) -> dialogInterface.cancel());
-
-            return builder.create();
+            return new AlertDialog.Builder(getActivity()).setMessage(message).setPositiveButton("OK", (dialogInterface, i) -> dialogInterface.cancel()).create();
         }
     }
 
@@ -216,10 +219,10 @@ public class WordPickerGameActivity extends AppCompatActivity {
 
         @NonNull @Override
         public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setMessage(message).setPositiveButton("Continuar", (dialogInterface, i) -> startActivity(new Intent(getContext(), QuizGameActivity.class)));
+            Intent gameIntent = new Intent(getContext(), QuizGameActivity.class);
+            //gameIntent.putExtra("UserId", userId);
 
-            return builder.create();
+            return new AlertDialog.Builder(getActivity()).setMessage(message).setPositiveButton("Continuar", (dialogInterface, i) -> startActivity(new Intent(getContext(), QuizGameActivity.class))).create();
         }
     }
 }

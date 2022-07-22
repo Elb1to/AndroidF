@@ -22,6 +22,7 @@ public class NavigationBarUI extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
     private String firstName, lastName, email, cedula;
+    private int userId;
 
     HelpActivity ayudaFragment = new HelpActivity();
     RankingFragment rankingFragment = new RankingFragment();
@@ -34,6 +35,7 @@ public class NavigationBarUI extends AppCompatActivity {
         setContentView(R.layout.activity_nav_bar);
 
         i = getIntent();
+        userId = i.getIntExtra("UserId", 0);
         firstName = i.getStringExtra("Nombre");
         lastName = i.getStringExtra("Apellido");
         email = i.getStringExtra("Correo");
@@ -64,7 +66,9 @@ public class NavigationBarUI extends AppCompatActivity {
                     startActivity(i);
                     return true;
                 case R.id.jugar:
-                    startActivity(new Intent(getApplicationContext(), WordPickerGameActivity.class));
+                    Intent gameIntent = new Intent(getApplicationContext(), WordPickerGameActivity.class);
+                    gameIntent.putExtra("UserId", userId);
+                    startActivity(gameIntent);
                     return true;
                 case R.id.ayuda:
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, ayudaFragment).commit();

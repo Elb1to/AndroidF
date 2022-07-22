@@ -2,7 +2,6 @@ package gg.rubit.components.auth;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -82,11 +81,11 @@ public class LoginActivity extends AppCompatActivity {
                             estudiante.setTipo(3);
 
                             Intent i = new Intent(getApplicationContext(), NavigationBarUI.class);
+                            i.putExtra("UserId", estudiante.getUsuario_id());
                             i.putExtra("Nombre", estudiante.getNombre());
                             i.putExtra("Apellido", estudiante.getApellido());
                             i.putExtra("Cedula", estudiante.getCedula());
                             i.putExtra("Correo", estudiante.getCorreo());
-
 
                             startActivity(i);
                         }
