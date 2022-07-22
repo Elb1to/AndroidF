@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/xd"
-    tools:context=".SelectConversation.SelectConversation">
+    tools:context=".SelectConversation">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,21 +22,29 @@
             android:textSize="20dp"/>
 
         <Spinner
-            android:backgroundTint="@color/white"
-            android:background="@color/white"
             android:layout_below="@+id/titulo"
-            android:layout_marginTop="5dp"
-            android:id="@+id/spnSel"
+            android:layout_marginTop="30dp"
+            android:id="@+id/spnTema"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:layout_centerHorizontal="true"/>
+
+        <Spinner
+            android:layout_below="@+id/spnTema"
+            android:layout_marginTop="30dp"
+            android:id="@+id/spnSubtema"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="Iniciar Leccion"
-            android:layout_below="@+id/spnSel"
+            android:layout_below="@+id/spnSubtema"
             android:layout_centerInParent="true"
             android:onClick="itemSelected"/>
 

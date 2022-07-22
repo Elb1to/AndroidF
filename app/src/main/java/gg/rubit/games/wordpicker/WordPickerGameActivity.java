@@ -26,12 +26,13 @@ public class WordPickerGameActivity extends AppCompatActivity {
     Button btnRes1, btnRes2, btnRes3, btnRes4, btnRes5, btnRes6;
     String reply = "", rest;
     String n1 = "", n2 = "", n3 = "", n4 = "", n5 = "", n6 = "";
+    int puntaje;
     String res2;
 
     String question = "", answer = "";
     int questionNumber;
 
-    int userId, puntajeAc;
+    int userId;
     Intent i;
 
     String[] preguntas = {
@@ -60,7 +61,6 @@ public class WordPickerGameActivity extends AppCompatActivity {
     private void initializeControllers() {
         i = getIntent();
         userId = i.getIntExtra("UserId", 0);
-        puntajeAc = i.getIntExtra("Puntaje", 0);
 
         questionNumber = (int) (Math.random() * 4);
         question = preguntas[questionNumber];
@@ -70,8 +70,7 @@ public class WordPickerGameActivity extends AppCompatActivity {
         int length = splitAnswers.length;
         int i;
         res2 = answer + " ";
-        //Toast.makeText(this, "i: " + length, Toast.LENGTH_LONG).show();
-        Toast.makeText(this, "UserId: " + userId, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "i: " + length, Toast.LENGTH_LONG).show();
 
         for (i = 0; i < length; i = i + 1) {
             switch (i) {
@@ -121,10 +120,13 @@ public class WordPickerGameActivity extends AppCompatActivity {
             okAlert.show(getSupportFragmentManager(), "Rellenar");
         } else {
             if (rest.equals(res2)) {
-                ContinueAlert alert = new ContinueAlert("Respuesta correcta", userId, puntajeAc);
+                puntaje = puntaje+5;
+                Toast.makeText(this, "correcto: " + res2, Toast.LENGTH_SHORT).show();
+                ContinueAlert alert = new ContinueAlert("Respuesta correcta");
                 alert.show(getSupportFragmentManager(), "Felicidades");
             } else {
-                ContinueAlert alert = new ContinueAlert("Respuesta incorrecta", userId, puntajeAc);
+                Toast.makeText(this, "respuesta correcta: " + res2 + ". Respuesta ingresada: " + rest, Toast.LENGTH_SHORT).show();
+                ContinueAlert alert = new ContinueAlert("Respuesta incorrecta");
                 alert.show(getSupportFragmentManager(), "Incorrecto");
             }
         }
@@ -205,31 +207,24 @@ public class WordPickerGameActivity extends AppCompatActivity {
 
         @NonNull @Override
         public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-            return new AlertDialog.Builder(getActivity())
-                    .setMessage(message)
-                    .setPositiveButton("OK", (dialogInterface, i) -> dialogInterface.cancel())
-                    .create();
+            return new AlertDialog.Builder(getActivity()).setMessage(message).setPositiveButton("OK", (dialogInterface, i) -> dialogInterface.cancel()).create();
         }
     }
 
     public static class ContinueAlert extends DialogFragment {
 
         private final String message;
-        private final int userId, score;
 
-        public ContinueAlert(String message, int userId, int score) {
+        public ContinueAlert(String message) {
             this.message = message;
-            this.userId = userId;
-            this.score = score;
         }
 
         @NonNull @Override
         public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-            Intent intent = new Intent(getContext(), QuizGameActivity.class);
-            intent.putExtra("UserId", userId);
-            intent.putExtra("Puntaje", score);
+            Intent gameIntent = new Intent(getContext(), QuizGameActivity.class);
+            //gameIntent.putExtra("UserId", userId);
 
-            return new AlertDialog.Builder(getActivity()).setMessage(message).setPositiveButton("Continuar", (dialogInterface, i) -> startActivity(intent)).create();
+            return new AlertDialog.Builder(getActivity()).setMessage(message).setPositiveButton("Continuar", (dialogInterface, i) -> startActivity(new Intent(getContext(), QuizGameActivity.class))).create();
         }
     }
 }

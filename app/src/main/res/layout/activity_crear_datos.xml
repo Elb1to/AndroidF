@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CrearDatos">
+
+    <EditText
+        android:id="@+id/txtId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Escriba el id"/>
+
+    <EditText
+        android:id="@+id/txtLeccionId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Escriba el id de la leccion"/>
+
+    <EditText
+        android:id="@+id/txtPersona"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="escriba la persona"/>
+
+    <EditText
+        android:id="@+id/txtDialogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="escriba el dialogo"/>
+
+    <EditText
+        android:id="@+id/txtAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="escriba el nombre del audio"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar dato"
+        android:onClick="SaveData"/>
+
+    <Button
+        android:onClick="Pantalla2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver datos guardados"/>
+
+</LinearLayout>
