@@ -60,15 +60,16 @@ public class DatabaseManager {
 
         return null;
     }
-    public List<Partida> ObtenerPartidaById(int partida){
-        try{
+
+    public List<Partida> ObtenerPartidaById(int partida) {
+        try {
             SQLiteDatabase db = databaseHelper.getReadableDatabase();
             List<Partida> partidas = new ArrayList<>();
-            if (db != null){
-                String[] campos = {"partida","jugador","juego","nivel","pregunta","respuestas","puntaje","fecha","hora"};
-                Cursor cursor = db.query("partida",campos,"partida="+partida,null,null,null,"hora DESC");
-                if (cursor.moveToFirst()){
-                    do{
+            if (db != null) {
+                String[] campos = {"partida", "jugador", "juego", "nivel", "pregunta", "respuestas", "puntaje", "fecha", "hora"};
+                Cursor cursor = db.query("partida", campos, "partida=" + partida, null, null, null, "hora DESC");
+                if (cursor.moveToFirst()) {
+                    do {
                         Partida part = new Partida();
                         part.setPartida(cursor.getInt(0));
                         part.setJugador(cursor.getString(1));
@@ -82,11 +83,11 @@ public class DatabaseManager {
 
                         partidas.add(part);
 
-                    }while(cursor.moveToNext());
+                    } while (cursor.moveToNext());
                 }
             }
             return partidas;
-        }catch (Exception e){
+        } catch (Exception e) {
             int x = 1;
         }
 

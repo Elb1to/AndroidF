@@ -42,6 +42,9 @@
             android:name="gg.rubit.components.ranking.RankingPodioActivity"
             android:exported="false" />
         <activity
+            android:name=".components.puntos.PuntosActivity"
+            android:exported="false" />
+        <activity
             android:name="gg.rubit.ui.loading.LoadingUI"
             android:exported="true">
             <intent-filter>
