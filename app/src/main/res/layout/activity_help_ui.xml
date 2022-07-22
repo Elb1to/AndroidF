@@ -43,7 +43,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
         android:gravity="center"
-        android:text="Correo de contacto: soli.aprende@gmail.com"
+        android:text="Correo de contacto: support@rubit.gg"
         android:textColor="@color/white"
         android:textSize="18dp" />
 
