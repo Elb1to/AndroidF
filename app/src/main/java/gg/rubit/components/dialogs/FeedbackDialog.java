@@ -12,11 +12,8 @@ public class FeedbackDialog extends AppCompatDialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Bundle args = getArguments();
         String msg = args.getString("ResCorrecta");
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Retroalimentación").setMessage("Respuesta Correcta:\n" + msg).setPositiveButton("Aceptar", (dialogInterface, i) -> {
+        return new AlertDialog.Builder(getActivity()).setTitle("Retroalimentación").setMessage("Respuesta Correcta:\n" + msg).setPositiveButton("Aceptar", (dialogInterface, i) -> {
 
-        });
-
-        return builder.create();
+        }).create();
     }
 }

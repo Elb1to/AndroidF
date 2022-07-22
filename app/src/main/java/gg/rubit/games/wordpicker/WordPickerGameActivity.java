@@ -1,5 +1,8 @@
 package gg.rubit.games.wordpicker;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -8,13 +11,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import gg.rubit.R;
-import gg.rubit.games.wordpicker.alerts.ContinueAlert;
-import gg.rubit.games.wordpicker.alerts.OkAlert;
+import gg.rubit.games.quiz.QuizGameActivity;
 
-public class WordPickerGame extends AppCompatActivity {
+public class WordPickerGameActivity extends AppCompatActivity {
 
     TextView lblPregunta;
     EditText txtRespuesta;
@@ -25,6 +30,9 @@ public class WordPickerGame extends AppCompatActivity {
 
     String question = "", answer = "";
     int questionNumber;
+
+    int userId;
+    Intent i;
 
     String[] preguntas = {
             "Ventajas del Patron Command",
@@ -50,9 +58,13 @@ public class WordPickerGame extends AppCompatActivity {
     }
 
     private void initializeControllers() {
+        i = getIntent();
+        userId = i.getIntExtra("UserId", 0);
+
         questionNumber = (int) (Math.random() * 4);
         question = preguntas[questionNumber];
         answer = respuestas[questionNumber];
+
         String[] splitAnswers = answer.split(" ");
         int length = splitAnswers.length;
         int i;
@@ -181,5 +193,36 @@ public class WordPickerGame extends AppCompatActivity {
 
         mp = MediaPlayer.create(this, R.raw.gallatin);
         mp.start();
+    }
+
+    public static class OkAlert extends DialogFragment {
+
+        private final String message;
+
+        public OkAlert(String message) {
+            this.message = message;
+        }
+
+        @NonNull @Override
+        public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+            return new AlertDialog.Builder(getActivity()).setMessage(message).setPositiveButton("OK", (dialogInterface, i) -> dialogInterface.cancel()).create();
+        }
+    }
+
+    public static class ContinueAlert extends DialogFragment {
+
+        private final String message;
+
+        public ContinueAlert(String message) {
+            this.message = message;
+        }
+
+        @NonNull @Override
+        public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+            Intent gameIntent = new Intent(getContext(), QuizGameActivity.class);
+            //gameIntent.putExtra("UserId", userId);
+
+            return new AlertDialog.Builder(getActivity()).setMessage(message).setPositiveButton("Continuar", (dialogInterface, i) -> startActivity(new Intent(getContext(), QuizGameActivity.class))).create();
+        }
     }
 }

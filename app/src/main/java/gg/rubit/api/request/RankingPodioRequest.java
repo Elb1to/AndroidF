@@ -2,37 +2,37 @@ package gg.rubit.api.request;
 
 public class RankingPodioRequest {
 
-    private String firstName;
-    private String lastName;
-    private long score;
+    private String nombre;
+    private String apellido;
+    private long puntajeac;
 
-    public RankingPodioRequest(String firstName, String lastName, long score) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.score = score;
+    public RankingPodioRequest(String nombre, String apellido, long puntajeac) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.puntajeac = puntajeac;
     }
 
     public String getFirstName() {
-        return firstName;
+        return nombre;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstName(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getLastName() {
-        return lastName;
+        return apellido;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastName(String apellido) {
+        this.apellido = apellido;
     }
 
     public long getScore() {
-        return score;
+        return puntajeac;
     }
 
-    public void setScore(long score) {
-        this.score = score;
+    public void setScore(long puntajeac) {
+        this.puntajeac = puntajeac;
     }
 }
