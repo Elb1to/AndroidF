@@ -12,21 +12,19 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import gg.rubit.R;
 import gg.rubit.components.auth.AuthMessageActivity;
 import gg.rubit.components.conversation.SelectConversation;
-import gg.rubit.components.help.HelpActivity;
 import gg.rubit.components.ranking.RankingActivity;
 import gg.rubit.components.ranking.RankingFragment;
 import gg.rubit.games.wordpicker.WordPickerGameActivity;
+import gg.rubit.ui.help.HelpUI;
 
 public class NavigationBarUI extends AppCompatActivity {
 
-    BottomNavigationView bottomNavigationView;
-
-    private String firstName, lastName, email, cedula;
-    private int userId;
-
-    HelpActivity ayudaFragment = new HelpActivity();
-    RankingFragment rankingFragment = new RankingFragment();
     Intent i;
+    BottomNavigationView bottomNavigationView;
+    RankingFragment rankingFragment = new RankingFragment();
+
+    int userId;
+    String firstName, lastName, email, cedula;
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -66,12 +64,10 @@ public class NavigationBarUI extends AppCompatActivity {
                     startActivity(i);
                     return true;
                 case R.id.jugar:
-                    Intent gameIntent = new Intent(getApplicationContext(), WordPickerGameActivity.class);
-                    //gameIntent.putExtra("UserId", userId);
-                    startActivity(gameIntent);
+                    startActivity(new Intent(getApplicationContext(), WordPickerGameActivity.class));
                     return true;
                 case R.id.ayuda:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container, ayudaFragment).commit();
+                    startActivity(new Intent(getApplicationContext(), HelpUI.class));
                     return true;
             }
 
