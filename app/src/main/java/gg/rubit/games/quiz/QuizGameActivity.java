@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import gg.rubit.R;
 import gg.rubit.components.puntos.PuntosActivity;
-import gg.rubit.ui.bar.navigation.NavigationBarUI;
 
 public class QuizGameActivity extends AppCompatActivity implements View.OnClickListener {
 
