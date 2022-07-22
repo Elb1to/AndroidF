@@ -49,7 +49,7 @@ public class NavigationBarUI extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), LessonActivity.class));
                         return true;
                     case R.id.ranking:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,rankingFragment).commit();
+                        startActivity(new Intent(getApplicationContext(), RankingActivity.class));
                         return true;
                     case R.id.perfil:
                         startActivity(new Intent(getApplicationContext(), AuthMessageActivity.class));

@@ -89,10 +89,10 @@ public class AuthMessageActivity extends AppCompatActivity {
         //imgCargando.setBackgroundResource(R.drawable.cargando);
     }
 
-    public void Menu(View v) {
-        click.start();
-        startActivity(new Intent(getApplicationContext(), NavigationBarUI.class));
-    }
+    //public void Menu(View v) {
+       // click.start();
+       // startActivity(new Intent(getApplicationContext(), NavigationBarUI.class));
+    //}
 
     public void utpLogo(View view) {
         click.start();

@@ -21,12 +21,12 @@ public class LessonActivity extends AppCompatActivity {
         initializeControllers();
         setContentView(R.layout.activity_leccion);
 
-    }
-    public void xd1(View v) {
+    }   public void xd1(View v) {
         startActivity(new Intent(LessonActivity.this, EngineeringActivity.class));
-        }
+    }
     public void xd2(View v) {
         startActivity(new Intent(LessonActivity.this, DevelopmentActivity.class));
+
     }
     private void initializeControllers() {
         xd1 = findViewById(R.id.boton1);

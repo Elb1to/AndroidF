@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
+import gg.rubit.api.response.Partida;
 import gg.rubit.data.Game;
 import gg.rubit.data.User;
 
@@ -54,6 +55,38 @@ public class DatabaseManager {
 
             return games;
         } catch (Exception e) {
+            int x = 1;
+        }
+
+        return null;
+    }
+    public List<Partida> ObtenerPartidaById(int partida){
+        try{
+            SQLiteDatabase db = databaseHelper.getReadableDatabase();
+            List<Partida> partidas = new ArrayList<>();
+            if (db != null){
+                String[] campos = {"partida","jugador","juego","nivel","pregunta","respuestas","puntaje","fecha","hora"};
+                Cursor cursor = db.query("partida",campos,"partida="+partida,null,null,null,"hora DESC");
+                if (cursor.moveToFirst()){
+                    do{
+                        Partida part = new Partida();
+                        part.setPartida(cursor.getInt(0));
+                        part.setJugador(cursor.getString(1));
+                        part.setJuego(cursor.getString(2));
+                        part.setNivel(cursor.getString(3));
+                        part.setPregunta(cursor.getString(4));
+                        part.setRespuestas(cursor.getString(5));
+                        part.setPuntaje(cursor.getInt(6));
+                        part.setFecha(cursor.getString(7));
+                        part.setHora(cursor.getString(8));
+
+                        partidas.add(part);
+
+                    }while(cursor.moveToNext());
+                }
+            }
+            return partidas;
+        }catch (Exception e){
             int x = 1;
         }
 
