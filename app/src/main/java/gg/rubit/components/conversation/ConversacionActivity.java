@@ -1,5 +1,6 @@
 package gg.rubit.components.conversation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -15,11 +16,12 @@ import gg.rubit.api.ApiService;
 import gg.rubit.components.conversation.adapters.ConversacionListViewAdapter;
 import gg.rubit.components.conversation.data.DatosConversacion;
 import gg.rubit.events.ResponseEventHandler;
+import gg.rubit.ui.bar.navigation.NavigationBarUI;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ConversacionActivity extends AppCompatActivity {
+public class ConversacionActivity extends AppCompatActivity implements View.OnClickListener {
 
     ListView lstConversacion;
     ConversacionListViewAdapter adapter;
@@ -91,5 +93,10 @@ public class ConversacionActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Se ha terminado la lección", Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(getApplicationContext(), NavigationBarUI.class));
     }
 }

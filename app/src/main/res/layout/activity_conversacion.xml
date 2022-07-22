@@ -19,4 +19,11 @@
         android:backgroundTint="@android:color/holo_green_light"
         android:onClick="AvanzarCuento"
         android:text="Siguiente" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="onClick"
+        android:text="PANTALLA PRINCIPAL" />
 </LinearLayout>
