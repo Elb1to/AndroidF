@@ -33,6 +33,9 @@ public class ConversationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_conversacion);
 
         initializeControllers();
+        Bundle datos = this.getIntent().getExtras();
+        responseEventHandler.selectedoption(Integer.parseInt(datos.getString("sel")));
+
         getDialogs();
     }
 
